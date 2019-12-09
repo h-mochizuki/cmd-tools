@@ -38,3 +38,4 @@ for %%i in ( %* ) do (
         )
     )
 )
+exit /b 1
