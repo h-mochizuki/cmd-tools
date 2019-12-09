@@ -6,10 +6,9 @@ rem ---------------------------------------------
 rem  usage:
 rem    md5sum [file]...
 rem =============================================
-set TPATH=%*
 set ARGORISM=MD5
-if "x%TPATH%"=="x" (
+if "x%1"=="x" (
     for /f "usebackq tokens=*" %%i in (`findstr .*`) do certutil -hashfile %%~fi %ARGORISM% | findstr /V /B "CertUtil: "
 ) else (
-    for %%i in ( %TPATH% ) do certutil -hashfile %%~fi %ARGORISM% | findstr /V /B "CertUtil: "
+    for %%i in ( %* ) do certutil -hashfile %%~fi %ARGORISM% | findstr /V /B "CertUtil: "
 )
