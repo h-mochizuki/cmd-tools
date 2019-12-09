@@ -1,6 +1,7 @@
 @echo off
 setlocal
 rem =============================================
-rem        run cmd as administrator role
+rem        swhich administrator role
 rem =============================================
-powershell start-process cmd -ArgumentList '/k ""cd /d %CD%""' -verb runas
+openfiles >nul 2>&1
+if errorlevel 1 powershell start-process cmd -ArgumentList '/k ""cd /d %CD%""' -verb runas
