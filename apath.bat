@@ -4,11 +4,11 @@ rem =============================================
 rem                 absolute path
 rem ---------------------------------------------
 rem  usage:
-rem    apath [path]
+rem    apath [path]...
 rem    echo [path]| apath
 rem =============================================
 if "x%1"=="x" (
     for /f "usebackq tokens=*" %%i in (`findstr .*`) do echo %%~fi
 ) else (
-    echo %~f1
+    for %%i in ( %* ) do echo %%~fi
 )
