@@ -6,13 +6,13 @@ rem ---------------------------------------------
 rem  usage:
 rem    drive-add [path] [drive letter]
 rem =============================================
-pushd %~pd0
 if "x%1"=="x" goto usage
 if "x%2"=="x" goto usage
 set "DRIVE_PATH=%~pf1"
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
 set "TEMPLATE=template\register_drive.reg.template"
+pushd %~pd0
 
 if not exist "%DRIVE_PATH%\" (
     echo Folder not found [%DRIVE_PATH%]
