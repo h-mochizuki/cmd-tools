@@ -10,7 +10,7 @@ pushd %~pd0
 if "x%1"=="x" goto usage
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
-set "TEMPLATE=template\remove_drive.reg.template"
+set "TEMPLATE=template\remove_localdrive.reg.template"
 
 set "DRIVE_LETTER=%1"
 set "DRIVE_LETTER=%DRIVE_LETTER:~0,1%"
