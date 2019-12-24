@@ -16,7 +16,7 @@ set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
 set "TEMPLATE=template\register_localdrive.reg.template"
 pushd %~pd0
 
-echo Link "%DRIVE_PATH%" to %DRIVE_LETTER%-Drive[%DRIVE_LETTER%:].
+echo Add link %DRIVE_LETTER%: =^> "%DRIVE_PATH%"
 echo After the work, you need to restart the machine.
 set "MSG=OK?"
 if not "x%~1"=="x" set "MSG=%~1"
@@ -45,7 +45,8 @@ if exist %REG_FILE% (
     regedit /S %REG_FILE%
     set "EL=%ERRORLEVEL%"
     del /Q /F %REG_FILE%
-    echo Add %DRIVE_LETTER%-Drive [%DRIVE_PATH%]. Please reboot.
+    echo Linked %DRIVE_LETTER%: =^> "%DRIVE_PATH%"
+    echo Please reboot.
     exit /b %EL%
 ) else (
     exit /b 99
