@@ -1,12 +1,12 @@
 @echo off
-setlocal EnableDelayedExpansion
+setlocal
 rem =============================================
-rem                 show msg dialog
+rem              show confirm dialog
 rem =============================================
 if "x%1"=="x" (
     set MSG=
     for /f "usebackq tokens=*" %%i in (`findstr .*`) do set MSG=!MSG! "%%i"
-    CScript.exe //NoLogo %~dp0vbs\msg-info.vbs !MSG!
+    CScript.exe //NoLogo %~dp0vbs\confirm.vbs !MSG!
 ) else (
-    CScript.exe //NoLogo %~dp0vbs\msg-info.vbs %*
+    CScript.exe //NoLogo %~dp0vbs\confirm.vbs %*
 )
