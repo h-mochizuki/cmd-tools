@@ -10,5 +10,5 @@ if "x%1"=="x" (
 ) else (
     for %%i in ( %* ) do echo %%i>>%WS%
 )
-msg /V /W %USERNAME% <"%WS%"
+msg %USERNAME% <"%WS%"
 del /F /Q "%WS%"
