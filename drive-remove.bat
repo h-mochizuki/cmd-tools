@@ -26,6 +26,10 @@ for /f "usebackq tokens=1* delims=:" %%a in (`findstr /n "^" %TEMPLATE%`) do (
     )
 )
 if exist %REG_FILE% (
+    if exist "%DRIVE_LETTER%:\System Volume Information" (
+        icacls "%DRIVE_LETTER%:\System Volume Information" /grant %USERNAME%:F
+        echo %USERNAME% is granted on full access control: %DRIVE_LETTER%:\System Volume Information
+    )
     regedit /S %REG_FILE%
     set "EL=%ERRORLEVEL%"
     del /Q /F %REG_FILE%

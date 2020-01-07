@@ -18,9 +18,7 @@ pushd %~pd0
 
 echo Add link %DRIVE_LETTER%: =^> "%DRIVE_PATH%"
 echo After the work, you need to restart the machine.
-set "MSG=OK?"
-if not "x%~1"=="x" set "MSG=%~1"
-set /p ANSWER="%MSG% [y/N]> "
+set /p ANSWER="OK? [y/N]> "
 if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto exec
 exit /b 1
 
