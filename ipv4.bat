@@ -4,7 +4,7 @@ rem =============================================
 rem                  show ipv4
 rem ---------------------------------------------
 rem  usage:
-rem    ipv4 [DeviceName]
+rem    ipv4 [Switch Name]
 rem =============================================
 set EL=1
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
