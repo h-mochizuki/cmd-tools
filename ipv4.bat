@@ -11,11 +11,11 @@ for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"
     pushd "%%i"
     call :main
-    if "x%~1"=="x" (
-        if exist "ipv4.txt" type ipv4.txt
-        set EL=0
-    ) else (
-        if exist "ipv4.txt" (
+    if exist "ipv4.txt" (
+        if "x%~1"=="x" (
+            type ipv4.txt
+            set EL=0
+        ) else (
             for /f "tokens=1,* delims=:" %%a in ( ipv4.txt ) do (
                 echo %%b| findstr "%~1">nul
                 if not errorlevel 1 (
