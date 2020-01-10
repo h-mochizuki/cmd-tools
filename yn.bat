@@ -7,6 +7,7 @@ rem  usage:
 rem    yn
 rem    # if errorlevel 1 echo Not sure!
 rem =============================================
+set "ANSWER="
 set "MSG=Are you sure?"
 if not "x%~1"=="x" set "MSG=%~1"
 set /p ANSWER="%MSG% [y/N]> "

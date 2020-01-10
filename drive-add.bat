@@ -8,6 +8,7 @@ rem    drive-add [drive letter] [path]
 rem =============================================
 if "x%1"=="x" goto usage
 if "x%2"=="x" goto usage
+set "ANSWER="
 set "DRIVE_LETTER=%1"
 set "DRIVE_LETTER=%DRIVE_LETTER:~0,1%"
 set "DRIVE_PATH=%~pf2"
