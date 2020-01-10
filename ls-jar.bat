@@ -6,19 +6,32 @@ rem ---------------------------------------------
 rem  usage:
 rem    ls-jar [option] [jar]...
 rem  option:
-rem    /C  : class only
+rem    /C  : show class file only
 rem =============================================
-if /i "x%1"=="x/c" set CLASS_ONLY=1
-if /i "x%1"=="x-c" set CLASS_ONLY=1
+if "x%~1"=="x" goto :usage
+if /i "x%~1"=="x/?" goto :usage
+if /i "x%~1"=="x-?" goto :usage
+goto :main
+
+:usage
+echo usage:
+echo   ^>ls-jar [option] [jar]...
+echo option:
+echo   /C  : show class file only
+exit /b 1
+
+:main
+if /i "x%~1"=="x/c" set CLASS_ONLY=1
+if /i "x%~1"=="x-c" set CLASS_ONLY=1
 if "x!CLASS_ONLY!"=="x1" shift
 
-:show
-set JAR_PATH=%~1
+:list
+set "JAR_PATH=%~1"
 shift
 if "x!JAR_PATH!"=="x" exit /b
 if not exist "!JAR_PATH!" (
     echo Notfound: !JAR_PATH!
-    goto :show
+    goto :list
 )
 echo !JAR_PATH!|findstr /E .jar>nul
 if not ERRORLEVEL 1 (
@@ -36,5 +49,5 @@ if not ERRORLEVEL 1 (
         )
     )
     if not "x%~1"=="x" echo;
-    goto :show
+    goto :list
 )
