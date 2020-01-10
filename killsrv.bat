@@ -28,7 +28,7 @@ setlocal EnableDelayedExpansion
 sc query state=all | findstr /B SERVICE_NAME>"services.txt"
 for /f "usebackq tokens=1,* delims=: " %%a in ( services.txt ) do (
     set "SERVICE_NAME=%%b"
-    for %%j in ( %* ) do echo !SERVICE_NAME!| findstr "%%j" >> "match.txt"
+    echo !SERVICE_NAME!| findstr %* >> "match.txt"
 )
 if not exist "match.txt" (
     echo Service not found : [%*]
