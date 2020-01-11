@@ -10,22 +10,8 @@ set EL=1
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"
     pushd "%%i"
-    call :main
-    if exist "ipv4.txt" (
-        if "x%~1"=="x" (
-            type ipv4.txt
-            set EL=0
-        ) else (
-            for /f "tokens=1,* delims=:" %%a in ( ipv4.txt ) do (
-                echo %%b| findstr "%~1">nul
-                if not errorlevel 1 (
-                    set "IP_ADDR=%%a"
-                    echo !IP_ADDR: =!
-                    set EL=0
-                )
-            )
-        )
-    )
+    call :main %*
+    set "EL=!ERRORLEVEL!"
     popd
     rmdir /S /Q "%%i"
 )
@@ -49,5 +35,14 @@ for /f "usebackq tokens=* delims=" %%j in ( `ipconfig` ) do (
             set "IP_NAME="
             set "IP_ADDR="
         )
+    )
+)
+if not exist "ipv4.txt" exit /b 1
+if "x%~1"=="x" type ipv4.txt & exit /b
+for /f "tokens=1,* delims=:" %%a in ( ipv4.txt ) do (
+    echo %%b| findstr "%~1">nul
+    if not errorlevel 1 (
+        set "IP_ADDR=%%a"
+        echo !IP_ADDR: =!
     )
 )
