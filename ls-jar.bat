@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 rem =============================================
-rem             show files in jar
+rem             list files in jar
 rem ---------------------------------------------
 rem  usage:
 rem    ls-jar [option] [jar]...
@@ -33,7 +33,7 @@ if not exist "!JAR_PATH!" (
     echo Notfound: !JAR_PATH!
     goto :list
 )
-echo !JAR_PATH!|findstr /E .jar>nul
+echo !JAR_PATH!|findstr /E ar>nul
 if not ERRORLEVEL 1 (
     for /f "usebackq tokens=*" %%j in ( `jar tvf !JAR_PATH!` ) do (
         for %%k in ( %%j ) do set "N=%%k"
