@@ -12,6 +12,7 @@ if "x%~1"=="x" (
     echo   ^> killsrv [service-name]...
     exit /b 1
 )
+pushd %~dp0\..
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"
     pushd "%%i"
@@ -20,6 +21,7 @@ for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     popd
     rmdir /S /Q "%%i"
 )
+popd
 exit /b !EL!
 endlocal
 
