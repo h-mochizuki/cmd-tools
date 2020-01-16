@@ -4,7 +4,7 @@ rem =============================================
 rem                 show msg dialog
 rem =============================================
 set "WS=%TIME:~0,8%%TIME:~9,2%"
-set "WS=%~dp0.ws_notice_%DATE:/=%%WS::=%.txt"
+set "WS=%~pd0.ws_notice_%DATE:/=%%WS::=%.txt"
 if "x%1"=="x" (
     for /f "usebackq tokens=*" %%i in (`findstr .*`) do echo %%i>>%WS%
 ) else (

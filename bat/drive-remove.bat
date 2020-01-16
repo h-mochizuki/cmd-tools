@@ -6,7 +6,7 @@ rem ---------------------------------------------
 rem  usage:
 rem    drive-remove [drive letter]
 rem =============================================
-pushd %~pd0
+pushd %~pd0..
 if "x%1"=="x" goto usage
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"

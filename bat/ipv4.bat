@@ -6,7 +6,7 @@ rem ---------------------------------------------
 rem  usage:
 rem    ipv4 [Switch Name]
 rem =============================================
-pushd %~dp0\..
+pushd %~pd0..
 set EL=1
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"

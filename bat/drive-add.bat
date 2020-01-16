@@ -15,7 +15,7 @@ set "DRIVE_PATH=%~pf2"
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
 set "TEMPLATE=template\register_localdrive.reg.template"
-pushd %~pd0
+pushd %~pd0..
 
 echo Add link %DRIVE_LETTER%: =^> "%DRIVE_PATH%"
 echo After the work, you need to restart the machine.
