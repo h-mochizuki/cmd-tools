@@ -6,16 +6,26 @@ rem ---------------------------------------------
 rem  usage:
 rem    drive-remove [drive letter]
 rem =============================================
-pushd %~pd0..
 if "x%1"=="x" goto usage
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
 set "TEMPLATE=template\remove_localdrive.reg.template"
-
 set "DRIVE_LETTER=%1"
 set "DRIVE_LETTER=%DRIVE_LETTER:~0,1%"
-for /f %%i in ("remove_drive_%DRIVE_LETTER%_%TIMESTAMP%.reg") do set "REG_FILE=%%~pfi"
 
+if not exist "%DRIVE_LETTER%:\" (
+    echo %DRIVE_LETTER%: drive is not found.
+    exit /b 1
+)
+echo Remove link %DRIVE_LETTER%: =^> "%DRIVE_PATH%"
+echo After the work, you need to restart the machine.
+set /p ANSWER="Remove %DRIVE_LETTER%: drive? [y/N]> "
+if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto exec
+exit /b 1
+
+:exec
+pushd %~pd0..
+for /f %%i in ("remove_drive_%DRIVE_LETTER%_%TIMESTAMP%.reg") do set "REG_FILE=%%~pfi"
 for /f "usebackq tokens=1* delims=:" %%a in (`findstr /n "^" %TEMPLATE%`) do (
     set "line=%%b"
     if "x!line!"=="x" (

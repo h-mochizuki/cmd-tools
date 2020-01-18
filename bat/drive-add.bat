@@ -15,15 +15,19 @@ set "DRIVE_PATH=%~pf2"
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
 set "TEMPLATE=template\register_localdrive.reg.template"
-pushd %~pd0..
 
+if exist "%DRIVE_LETTER%:\" (
+    echo %DRIVE_LETTER%: drive has already exists.
+    exit /b 1
+)
 echo Add link %DRIVE_LETTER%: =^> "%DRIVE_PATH%"
 echo After the work, you need to restart the machine.
-set /p ANSWER="OK? [y/N]> "
+set /p ANSWER="Add %DRIVE_LETTER%: drive? [y/N]> "
 if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto exec
 exit /b 1
 
 :exec
+pushd %~pd0..
 if not exist "%DRIVE_PATH%\" (
     echo Folder not found [%DRIVE_PATH%]
     exit /b 1
