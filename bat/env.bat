@@ -6,6 +6,9 @@ rem ---------------------------------------------
 rem  usage:
 rem    env [VAR NAME(PATH default)]
 rem =============================================
+if /i "x%~1"=="x/?" goto :usage
+if /i "x%~1"=="x-?" goto :usage
+
 pushd %~pd0..
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"
@@ -16,6 +19,17 @@ for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
 )
 popd
 exit /b
+
+:usage
+echo management path variables
+echo;
+echo usage:
+echo   ^>env [option] [name]...
+echo option:
+echo   ? : show usage
+echo args:
+echo   name : variable name^(Default 'PATH'^)
+exit /b 1
 
 :main
 @echo off
