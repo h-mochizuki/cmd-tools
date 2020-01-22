@@ -30,14 +30,26 @@ endlocal
 setlocal EnableDelayedExpansion
 sc query state=all | findstr /B SERVICE_NAME>"origin.txt"
 type "origin.txt" | findstr %*>"services.txt"
+set "CNT=0"
 for /f "usebackq tokens=1,* delims=: " %%a in ( services.txt ) do (
     set "SERVICE_NAME=%%b"
+    set /a "CNT=!CNT!+1"
     echo !SERVICE_NAME!| findstr %* >> "match.txt"
 )
 if not exist "match.txt" (
     echo Service not found : [%*]
     exit /b 1
 )
+echo ---------------------------------------
+type match.txt
+echo ---------------------------------------
+echo find !CNT! service(s).
+set "ANSWER="
+set /p ANSWER="Continue? [y/N]> "
+if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto list
+exit /b 1
+
+:list
 set EL=0
 for /f "usebackq tokens=* delims=" %%j in ( match.txt ) do (
     call :stop "%%j"
