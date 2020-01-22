@@ -4,12 +4,12 @@ rem =============================================
 rem              kill service tasks
 rem ---------------------------------------------
 rem  usage:
-rem    killsrv [Serice Name]...
+rem    kill-srv [Serice Name]...
 rem =============================================
 set EL=1
 if "x%~1"=="x" (
     echo usage:
-    echo   ^> killsrv [service-name]...
+    echo   ^> kill-srv [service-name]...
     exit /b 1
 )
 pushd %~pd0..
