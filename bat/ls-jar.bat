@@ -17,7 +17,7 @@ goto :main
 echo usage:
 echo   ^>ls-jar [option] [jar]...
 echo option:
-echo   /C  : show class file only
+echo\  /c  : show class file only
 exit /b 1
 
 :main

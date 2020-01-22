@@ -14,7 +14,7 @@ goto :main
 echo usage:
 echo   ^>sub [option] [WorkDir] [WorkName]
 echo option:
-echo   ?        : show this usage
+echo\  /?        : show this usage
 echo args:
 echo   WorkDir  : sub-prompt work directory
 echo   WorkName : sub-prompt display name

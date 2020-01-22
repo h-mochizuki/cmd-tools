@@ -26,7 +26,7 @@ echo;
 echo usage:
 echo   ^>env [option] [name]...
 echo option:
-echo   ? : show usage
+echo\  /? : show usage
 echo args:
 echo   name : variable name^(Default 'PATH'^)
 exit /b 1
