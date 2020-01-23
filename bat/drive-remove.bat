@@ -7,11 +7,11 @@ rem  usage:
 rem    drive-remove [drive letter]
 rem =============================================
 if "x%1"=="x" goto usage
-set "TIMESTAMP=%TIME:~0,8%"
-set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
-set "TEMPLATE=template\remove_localdrive.reg.template"
 set "DRIVE_LETTER=%1"
 set "DRIVE_LETTER=%DRIVE_LETTER:~0,1%"
+for %%i in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do call set "DRIVE_LETTER=%%DRIVE_LETTER:%%i=%%i%%"
+set "TIMESTAMP=%TIME:~0,8%"
+set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
 
 if not exist "%DRIVE_LETTER%:\" (
     echo %DRIVE_LETTER%: drive is not found.
@@ -26,15 +26,13 @@ exit /b 1
 :exec
 pushd %~pd0..
 for /f %%i in ("remove_drive_%DRIVE_LETTER%_%TIMESTAMP%.reg") do set "REG_FILE=%%~pfi"
-for /f "usebackq tokens=1* delims=:" %%a in (`findstr /n "^" %TEMPLATE%`) do (
-    set "line=%%b"
-    if "x!line!"=="x" (
-        echo;>> !REG_FILE!
-    ) else (
-        set "line=!line:$DRIVE_LETTER$=%DRIVE_LETTER%!"
-        echo !line!>> !REG_FILE!
-    )
-)
+(
+    echo Windows Registry Editor Version 5.00
+    echo;
+    echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices]
+    echo "%DRIVE_LETTER%:"=-
+    echo;
+)>> !REG_FILE!
 if exist %REG_FILE% (
     if exist "%DRIVE_LETTER%:\System Volume Information" (
         icacls "%DRIVE_LETTER%:\System Volume Information" /grant %USERNAME%:F

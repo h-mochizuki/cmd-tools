@@ -11,10 +11,10 @@ if "x%2"=="x" goto usage
 set "ANSWER="
 set "DRIVE_LETTER=%1"
 set "DRIVE_LETTER=%DRIVE_LETTER:~0,1%"
+for %%i in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do call set "DRIVE_LETTER=%%DRIVE_LETTER:%%i=%%i%%"
 set "DRIVE_PATH=%~pf2"
 set "TIMESTAMP=%TIME:~0,8%"
 set "TIMESTAMP=%DATE:/=%%TIMESTAMP::=%"
-set "TEMPLATE=template\register_localdrive.reg.template"
 
 if exist "%DRIVE_LETTER%:\" (
     echo %DRIVE_LETTER%: drive has already exists.
@@ -33,17 +33,13 @@ if not exist "%DRIVE_PATH%\" (
     exit /b 1
 )
 for /f %%i in ("register_drive_%DRIVE_LETTER%_%TIMESTAMP%.reg") do set "REG_FILE=%%~pfi"
-
-for /f "usebackq tokens=1* delims=:" %%a in (`findstr /n "^" %TEMPLATE%`) do (
-    set "line=%%b"
-    if "x!line!"=="x" (
-        echo;>> !REG_FILE!
-    ) else (
-        set "line=!line:$DRIVE_LETTER$=%DRIVE_LETTER%!"
-        set "line=!line:$DRIVE_PATH$=%DRIVE_PATH:\=\\%!"
-        echo !line!>> !REG_FILE!
-    )
-)
+(
+    echo Windows Registry Editor Version 5.00
+    echo;
+    echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices]
+    echo "%DRIVE_LETTER%:"="\\??\\%DRIVE_PATH:\=\\%"
+    echo;
+)>> !REG_FILE!
 if exist %REG_FILE% (
     regedit /S %REG_FILE%
     set "EL=%ERRORLEVEL%"
