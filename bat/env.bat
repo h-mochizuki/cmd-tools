@@ -13,7 +13,7 @@ pushd %~pd0..
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"
     pushd "%%i"
-    call :main "%~1"
+    call :main %*
     popd
     rmdir /S /Q "%%i"
 )
@@ -34,12 +34,21 @@ exit /b 1
 :main
 @echo off
 setlocal EnableDelayedExpansion
+if /i "x%~1"=="x/k" goto :keys
+if /i "x%~1"=="x-k" goto :keys
 if "x%~1"=="x" (
     call :split "!PATH!"
 ) else (
     call :split "!%~1!"
 )
 if exist split.txt type split.txt
+exit /b
+
+:keys
+for /f "usebackq tokens=1,* delims==" %%a in ( `set` ) do (
+    echo %%a>>keys.txt
+)
+if exist keys.txt type keys.txt
 exit /b
 
 :split
