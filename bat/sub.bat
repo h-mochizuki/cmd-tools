@@ -24,8 +24,8 @@ exit /b 1
 set "BASE_DIR=%CD%"
 set "OLD_PROMPT=%PROMPT%"
 set "WORK_DIR=%~1"
-if "x%WORK_DIR%"=="x" set "WORK_DIR=%CD%"
-if "x%WORK_DIR%"=="x" for %%i in ( "%WORK_DIR%" ) do set "WORK_DIR=%%~dpi"
+if "x%WORK_DIR%"=="x" set "WORK_DIR=%CD:~1%"
+for %%i in ( "%WORK_DIR%" ) do set "WORK_DIR=%%~fi"
 if not exist "%WORK_DIR%" echo %1 not found. & exit /b 1
 set "WORK_NAME=%~2"
 if "x%WORK_NAME%"=="x" for %%i in ( "%WORK_DIR%" ) do set "WORK_NAME=%%~nxi"
@@ -35,14 +35,23 @@ set "EL=0"
 for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
     mkdir "%%i"
     pushd "%%i"
+    doskey /macros > .macros
+    for /f "usebackq tokens=1,* delims==" %%m in ( `doskey /macros` ) do doskey %%m=
     (
+        echo color 8E
         echo cd /D "%WORK_DIR%"
         echo title %WORK_NAME%
         echo prompt %WORK_NAME%$G
+        echo if exist .profile.bat call .profile.bat
+        echo if exist "%WORK_DIR%\.macros" doskey /macrofile="%WORK_DIR%\.macros"
+        echo if exist "%WORK_DIR%\.profile" call "%WORK_DIR%\.profile"
     ) > script.bat
     cmd /Q /K script.bat
+    for /f "usebackq tokens=1,* delims==" %%m in ( `doskey /macros` ) do doskey %%m=
+    if exist .macros doskey /macrofile=.macros
     set "EL=%ERRORLEVEL%"
     prompt %OLD_PROMPT%
+    color
     popd
     rmdir /S /Q "%%i"
 )
