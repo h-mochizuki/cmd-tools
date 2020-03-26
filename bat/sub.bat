@@ -5,6 +5,10 @@ rem                 start sub prompt
 rem ---------------------------------------------
 rem  usage:
 rem    sub [WorkDir] [WorkName]
+rem ---------------------------------------------
+rem  Environment WorkDir
+rem    WorkDir/
+rem       .profile.bat : your preset bat(option)
 rem =============================================
 if /i "x%~1"=="x/?" goto :usage
 if /i "x%~1"=="x-?" goto :usage
