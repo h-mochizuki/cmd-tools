@@ -36,7 +36,8 @@ if "x%WORK_NAME%"=="x" for %%i in ( "%WORK_DIR%" ) do set "WORK_NAME=%%~nxi"
 
 pushd %~pd0..
 set "EL=0"
-for %%i in ( "wk_%DATE:/=%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%%TIME:~9,2%" ) do (
+set "NOW=%TIME: =0%"
+for %%i in ( "wk_%DATE:/=%%NOW:~0,2%%NOW:~3,2%%NOW:~6,2%%NOW:~9,2%" ) do (
     mkdir "%%i"
     pushd "%%i"
     doskey /macros > .macros
