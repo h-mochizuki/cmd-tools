@@ -52,9 +52,9 @@ for %%i in ( "wk_%DATE:/=%%NOW:~0,2%%NOW:~3,2%%NOW:~6,2%%NOW:~9,2%" ) do (
         echo if exist "%WORK_DIR%\.profile" call "%WORK_DIR%\.profile"
     ) > script.bat
     cmd /Q /K script.bat
+    set "EL=%ERRORLEVEL%"
     for /f "usebackq tokens=1,* delims==" %%m in ( `doskey /macros` ) do doskey %%m=
     if exist .macros doskey /macrofile=.macros
-    set "EL=%ERRORLEVEL%"
     prompt %OLD_PROMPT%
     color
     popd
