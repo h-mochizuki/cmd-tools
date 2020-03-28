@@ -43,7 +43,7 @@ for %%i in ( "wk_%DATE:/=%%NOW:~0,2%%NOW:~3,2%%NOW:~6,2%%NOW:~9,2%" ) do (
     doskey /macros > .macros
     for /f "usebackq tokens=1,* delims==" %%m in ( `doskey /macros` ) do doskey %%m=
     (
-        echo color 8E
+        echo color 2
         echo cd /D "%WORK_DIR%"
         echo title %WORK_NAME%
         echo prompt %WORK_NAME%$G
