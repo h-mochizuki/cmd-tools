@@ -7,10 +7,10 @@ rem  usage:
 rem    strlen [string]
 rem    echo [string]| strlen
 rem =============================================
-if "x%1"=="x" (
-    for /f "usebackq tokens=*" %%i in (`findstr .*`) do call :calc "%%i"
+if "x%~1"=="x" (
+    for /f "usebackq tokens=*" %%i in (`findstr .*`) do call :calc "%%~i"
 ) else (
-    call :calc "%1"
+    call :calc "%~1"
 )
 exit /b
 
