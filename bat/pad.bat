@@ -12,7 +12,7 @@ rem =============================================
 
 set "WC=0"
 set WD=%~1
-for /f "usebackq" %%i in ( `stlen %WD%` ) do set "WC=%%i"
+for /f "usebackq" %%i in ( `strlen %WD%` ) do set "WC=%%i"
 if %WC% LEQ 0 exit /b
 
 set "REV="
