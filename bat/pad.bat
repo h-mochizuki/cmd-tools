@@ -1,12 +1,12 @@
 @echo off
 setlocal EnableDelayedExpansion
 rem =============================================
-rem                fill string
+rem         Pad the String with the spaces
 rem ---------------------------------------------
 rem  usage:
-rem    fill 1234 10
+rem    pad 1234 10
 rem    # 0000001234
-rem    fill hoge -10 *
+rem    pad hoge -10 *
 rem    # hoge******
 rem =============================================
 
@@ -26,7 +26,7 @@ if %SIZE% LEQ 0 set "SIZE=%WC%"
 set /a "TO=%SIZE%-%WC%"
 
 set FC=%~3
-if "x%FC%"=="x" set "FC=0"
+if "x%FC%"=="x" set "FC= "
 
 set "RE="
 for /l %%i in (1,1,%TO%) do set "RE=!RE!!FC!"
