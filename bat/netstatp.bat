@@ -30,6 +30,7 @@ for /f "usebackq tokens=1,2,3,4,5" %%a in ( `netstat -ano` ) do (
     if "x!PRT!"=="xUDP" (
         for /f "usebackq tokens=*" %%f in ( `pad "%%b" 21 -` ) do set "LADD=%%f"
         for /f "usebackq tokens=*" %%f in ( `pad "%%c" 20 -` ) do set "FADD=%%f"
+        set "STS=           "
         for /f "usebackq tokens=*" %%f in ( `pad "%%d" 5 -` ) do set "PID=%%f"
         for /f "usebackq tokens=*" %%f in ( `tasklist /SVC /NH /FO CSV /FI "PID eq %%d"` ) do (
             set LINE=%%f
