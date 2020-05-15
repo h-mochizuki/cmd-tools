@@ -31,7 +31,7 @@ exit /b
 @echo off
 setlocal EnableDelayedExpansion
 set "CNT=0"
-for /f "usebackq tokens=1,*" %%a in ( `jps` ) do (
+for /f "usebackq tokens=1,*" %%a in ( `jps -m` ) do (
     if /i not "x%%b"=="xJps" (
         echo %%a %%b>>jps.txt
         set /a "CNT=!CNT!+1"
