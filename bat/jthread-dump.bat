@@ -4,6 +4,8 @@ rem =============================================
 rem                java thread dump
 rem =============================================
 for %%i in ( . ) do set CURRENT_DIR=%%~pfi
+for /f "usebackq" %%i in ( `timestamp` ) do set TS=%%i
+set "MYPID=%~1"
 :validate
 where jps >nul 2>&1
 if errorlevel 1 (
@@ -31,7 +33,7 @@ exit /b
 @echo off
 setlocal EnableDelayedExpansion
 set "CNT=0"
-for /f "usebackq tokens=1,*" %%a in ( `jps` ) do (
+for /f "usebackq tokens=1,*" %%a in ( `jps -m` ) do (
     if /i not "x%%b"=="xJps" (
         echo %%a %%b>>jps.txt
         set /a "CNT=!CNT!+1"
@@ -47,10 +49,10 @@ type jps.txt
 echo --------------------------
 set "ANSWER="
 set /p ANSWER="Generate thread dump? [y/N]> "
-if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto list
+if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto each
 exit /b 1
 
-:list
+:each
 set "EL="
 for /f "tokens=1,*" %%a in ( jps.txt ) do (
     call :exec %%a %%b
@@ -63,13 +65,17 @@ exit /b !EL!
 setlocal EnableDelayedExpansion
 set PID=%~1
 set NAME=%~2
-set "ANSWER="
-set /p ANSWER="Generate thread dump[pid=!PID!, name=!NAME!]? [y/N]> "
-if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto dump
+if "x%MYPID%"=="x!PID!" (
+    goto dump
+) else if "x%MYPID%"=="x" (
+    set "ANSWER="
+    set /p ANSWER="Generate thread dump[pid=!PID!, name=!NAME!]? [y/N]> "
+    if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto dump
+)
 exit /b 1
 
 :dump
-set "FILENAME=!PID!_!NAME!_dump.log"
+set "FILENAME=!PID!_!NAME!_dump_%TS%.log"
 set "FILENAME=!FILENAME: =!"
 jstack -l !PID! >> "%CURRENT_DIR%\!FILENAME!"
 set EL=%ERRORLEVEL%
