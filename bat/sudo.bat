@@ -10,7 +10,6 @@ set "COMMAND=%*"
 set "COMMAND=%COMMAND:"=\"%"
 openfiles >nul 2>&1
 if not errorlevel 1 goto :admin
-echo powershell Start-Process -verb runAs cmd -ArgumentList '/k ""cd /d %CD%^&%COMMAND%""'
 powershell Start-Process -verb runAs cmd -ArgumentList '/k ""cd /d %CD%^&%COMMAND%""'
 exit /b %errorlevel%
 
