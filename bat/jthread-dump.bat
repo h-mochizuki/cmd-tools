@@ -68,9 +68,9 @@ set NAME=%~2
 if "x%MYPID%"=="x!PID!" (
     goto dump
 ) else if "x%MYPID%"=="x" (
-    set "ANSWER="
-    set /p ANSWER="Generate thread dump[pid=!PID!, name=!NAME!]? [y/N]> "
-    if not "x%ANSWER%"=="x" if /i "x%ANSWER:~0,1%"=="xy" goto dump
+    set "ANSWER1="
+    set /p ANSWER1="Generate thread dump[pid=!PID!, name=!NAME!]? [y/N]> "
+    if /i "x!ANSWER1:~0,1!"=="xy" goto dump
 )
 exit /b 1
 
