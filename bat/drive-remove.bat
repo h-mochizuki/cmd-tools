@@ -25,6 +25,10 @@ exit /b 1
 
 :exec
 pushd %~pd0..
+for /f "usebackq tokens=1,2,* delims= " %%i in ( `reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices" /v "%DRIVE_LETTER%:"` ) do (
+    if not "x%%k"=="xDevices" set "DRIVE_DIR=%%k"
+    set "DRIVE_DIR=!DRIVE_DIR:~4!"
+)
 for /f %%i in ("remove_drive_%DRIVE_LETTER%_%TIMESTAMP%.reg") do set "REG_FILE=%%~pfi"
 (
     echo Windows Registry Editor Version 5.00
@@ -42,6 +46,7 @@ if exist %REG_FILE% (
     set "EL=%ERRORLEVEL%"
     del /Q /F %REG_FILE%
     echo Remove %DRIVE_LETTER%-Drive. Please reboot.
+    if exist "!DRIVE_DIR!" rd /S /Q "!DRIVE_DIR!"
     exit /b %EL%
 ) else (
     exit /b 99
