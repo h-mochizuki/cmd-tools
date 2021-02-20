@@ -12,6 +12,7 @@ echo =============================================
 exit /b
 :main
 shift
+if "x%~1"=="x" exit /b
 set "result="
 
 :next
