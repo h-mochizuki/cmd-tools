@@ -32,7 +32,7 @@ if "x%size:~0,1%"=="x-" (
 if %size% LEQ 0 set "size=%cnt%"
 set /a "to=%size%-%cnt%"
 
-set padding=%~3
+set "padding=%~3"
 if "x%padding%"=="x" set "padding= "
 
 set "result="
