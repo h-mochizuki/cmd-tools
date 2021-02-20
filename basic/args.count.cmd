@@ -5,8 +5,8 @@ echo =============================================
 echo          Return arguments count.
 echo ---------------------------------------------
 echo  usage:
-echo    arg.count 1 2 3 -^> 3
-echo    arg.count -^> 0
+echo    args.count 1 2 3 -^> 3
+echo    args.count -^> 0
 echo  args:
 echo    1+: arguments
 echo =============================================

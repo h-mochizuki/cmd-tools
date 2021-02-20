@@ -5,14 +5,14 @@ echo =============================================
 echo       Execute command each input-stream.
 echo ---------------------------------------------
 echo  usage:
-echo    echo a^| arg.each echo {}{} -^> aa
+echo    echo a^| args.each echo {}{} -^> aa
 echo  args:
 echo    1+: commands [{} replaced argument]
 echo;
 echo  caution1: argment is required.
-echo    arg.each -^> FREEZE!! WAIT INPUT.
+echo    args.each -^> FREEZE!! WAIT INPUT.
 echo  caution2: white space is counted.
-echo    echo str   ^| arg.each -^> 6
+echo    echo str   ^| args.each -^> 6
 echo =============================================
 exit /b
 :main
