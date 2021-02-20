@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
-if not "x%1"=="x/?" goto :main
+if not "x%~1"=="x/?" goto :main
 echo =============================================
 echo           Pad string with padding.
 echo ---------------------------------------------

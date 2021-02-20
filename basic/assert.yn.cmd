@@ -1,6 +1,6 @@
 @echo off
 setlocal
-if not "x%1"=="x/?" goto :main
+if not "x%~1"=="x/?" goto :main
 echo =============================================
 echo            Confirm yes or no.
 echo ---------------------------------------------
