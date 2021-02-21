@@ -2,11 +2,11 @@
 setlocal EnableDelayedExpansion
 if not "x%~1"=="x/?" goto :main
 echo =============================================
-echo          Return arguments count.
+echo          Return array item count.
 echo ---------------------------------------------
 echo  usage:
-echo    args.count 1 2 3 -^> 3
-echo    args.count -^> 0
+echo    arr.count 1 2 3 -^> 3
+echo    arr.count -^> 0
 echo  args:
 echo    1+: arguments
 echo =============================================

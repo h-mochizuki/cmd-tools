@@ -13,13 +13,13 @@ exit /b
 :main
 where file.temp >nul 2>nul
 if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
-where args.setf >nul 2>nul
+where var.setf >nul 2>nul
 if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
 if "x%~1"=="x" (
     sc query state=all
     exit /b
 )
-call args.setf tmpfile file.temp
+call var.setf tmpfile file.temp
 sc query state=all | findstr /B SERVICE_NAME >"%tmpfile%"
 for /f "tokens=2* delims=: " %%s in (%tmpfile%) do (
     for %%n in ( %* ) do (

@@ -18,10 +18,10 @@ if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
 call assert.admin
 if not errorlevel 1 exit /b
 
-where args.setf >nul 2>nul
+where var.setf >nul 2>nul
 if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
-where args.remains >nul 2>nul
+where arr.remains >nul 2>nul
 if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
-call args.setf args args.remains %*
+call var.setf args arr.remains %*
 powershell Start-Process -verb runAs cmd -ArgumentList '/c ""cd /d %cd% ^& %~f1 %args%""'
 exit /b 1

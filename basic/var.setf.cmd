@@ -4,7 +4,7 @@ echo =============================================
 echo         Set result value to variable.
 echo ---------------------------------------------
 echo  usage:
-echo    call args.setf tempfile file.tmp
+echo    call var.setf tempfile file.tmp
 echo    # echo %%tempfile%% -^> %%temp%%\bat~123.tmp
 echo  args:
 echo    1: variable name [require]
@@ -17,9 +17,9 @@ exit /b
 :main
 if "x%~1"=="x" exit /b
 set "%~1="
-where args.remains >nul 2>nul
+where arr.remains >nul 2>nul
 if errorlevel 1 set "PATH=%PATH%;%~dp0"
-for /f "usebackq tokens=*" %%c in (`args.remains %*`) do (
+for /f "usebackq tokens=*" %%c in (`arr.remains %*`) do (
     for /f "usebackq tokens=*" %%r in (`%%c`) do set "%~1=%%~r"
 )
 exit /b
