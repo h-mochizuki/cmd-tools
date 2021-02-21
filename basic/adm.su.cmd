@@ -13,9 +13,7 @@ echo    if you are not administrator.
 echo =============================================
 exit /b
 :main
-where assert.admin >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
-
+call %~dp0path.include
 call assert.admin
 if not errorlevel 1 exit /b
 powershell Start-Process -verb runAs cmd -ArgumentList '/k ""cd /d %cd%""'

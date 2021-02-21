@@ -21,8 +21,7 @@ echo    adm.sudo echo abc `n pause
 echo =============================================
 exit /b
 :main
-where assert.admin >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
+call %~dp0path.include
 
 set "command=%*"
 call assert.admin

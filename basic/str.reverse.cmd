@@ -15,8 +15,7 @@ echo    str.reverse -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b
 :main
-where str.stream >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
+call %~dp0path.include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do call :rev "%%~i"
 exit /b
 

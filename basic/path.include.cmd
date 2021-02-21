@@ -10,14 +10,13 @@ echo    1: folder path [set %~dp0 if empty]
 echo =============================================
 exit /b
 :main
+pushd %~dp0
 if "x%~1"=="x" (
-    pushd %~dp0
     path | findstr /C:"%CD%;" >nul 2>&1
     if errorlevel 1 (
         path | findstr /E /C:"%CD%" >nul 2>&1
         if errorlevel 1 set "PATH=%PATH%;%CD%"
     )
-    popd
 ) else (
     path | findstr /C:"%~f1;" >nul 2>&1
     if errorlevel 1 (
@@ -25,3 +24,4 @@ if "x%~1"=="x" (
         if errorlevel 1 set "PATH=%PATH%;%~f1"
     )
 )
+popd

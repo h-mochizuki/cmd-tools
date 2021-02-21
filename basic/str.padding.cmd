@@ -14,8 +14,7 @@ echo    3: padding charactor[default: whitespace]
 echo =============================================
 exit /b
 :main
-where str.length >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
+call %~dp0path.include
 
 set "cnt=0"
 set "input=%~1"

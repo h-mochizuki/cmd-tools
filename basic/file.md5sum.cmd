@@ -9,8 +9,7 @@ echo    file.md5sum file -^> 2786...
 echo =============================================
 exit /b
 :main
-where str.stream >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
+call %~dp0path.include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do (
     certutil -hashfile "%%~fi" MD5 | findstr /V /B "CertUtil: "
 )

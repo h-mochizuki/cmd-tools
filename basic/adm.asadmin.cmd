@@ -13,15 +13,10 @@ echo =============================================
 exit /b
 :main
 if "x%~1"=="x" exit /b
-where assert.admin >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
+call %~dp0path.include
 call assert.admin
 if not errorlevel 1 exit /b
 
-where var.setf >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
-where arr.remains >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
 call var.setf args arr.remains %*
 powershell Start-Process -verb runAs cmd -ArgumentList '/c ""cd /d %cd% ^& %~f1 %args%""'
 exit /b 1

@@ -11,10 +11,7 @@ echo    1: service name [show list when empty]
 echo =============================================
 exit /b
 :main
-where file.temp >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
-where var.setf >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0"
+call %~dp0path.include
 if "x%~1"=="x" (
     sc query state=all
     exit /b
