@@ -5,13 +5,13 @@ echo =============================================
 echo    Return absolute path from your inputs.
 echo ---------------------------------------------
 echo  usage:
-echo    file.apath FILE -^> C:\PATH\TO\FILE
-echo    echo FILE ^| file.apath -^> C:\PATH\TO\FILE
+echo    path.absolute FILE -^> C:\PATH\TO\FILE
+echo    echo FILE ^| path.absolute -^> C:\PATH\TO\FILE
 echo  args:
 echo    1: input-string or input-stream
 echo; 
 echo  caution: argment is required.
-echo    file.apath -^> FREEZE!! WAIT INPUT.
+echo    path.absolute -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b
 :main
