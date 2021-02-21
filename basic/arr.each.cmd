@@ -9,10 +9,8 @@ echo    echo a^| arr.each echo {}{} -^> aa
 echo  args:
 echo    1+: commands [{} replaced argument]
 echo;
-echo  caution1: argment is required.
+echo  caution: input-stream required.
 echo    arr.each -^> FREEZE!! WAIT INPUT.
-echo  caution2: white space is counted.
-echo    echo str   ^| arr.each -^> 6
 echo =============================================
 exit /b
 :main
