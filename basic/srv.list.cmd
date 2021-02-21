@@ -11,11 +11,12 @@ echo    1: service name [show list when empty]
 echo =============================================
 exit /b
 :main
-call %~dp0path.include
 if "x%~1"=="x" (
     sc query state=all
     exit /b
 )
+
+call %~dp0path.include
 call var.setf tmpfile file.temp
 sc query state=all | findstr /B SERVICE_NAME >"%tmpfile%"
 for /f "tokens=2* delims=: " %%s in (%tmpfile%) do (
