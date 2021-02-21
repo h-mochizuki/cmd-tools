@@ -14,7 +14,7 @@ echo =============================================
 exit /b
 :main
 where assert.admin >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
+if errorlevel 1 set "PATH=%PATH%;%~dp0"
 
 call assert.admin
 if not errorlevel 1 exit /b

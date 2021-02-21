@@ -22,7 +22,7 @@ echo =============================================
 exit /b
 :main
 where assert.admin >nul 2>nul
-if errorlevel 1 set "PATH=%PATH%;%~dp0;%~dp0..\basic"
+if errorlevel 1 set "PATH=%PATH%;%~dp0"
 
 set "command=%*"
 call assert.admin
