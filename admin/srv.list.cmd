@@ -20,7 +20,6 @@ if "x%~1"=="x" (
     exit /b
 )
 call args.setf tmpfile file.temp
-echo tmpfile: %tmpfile%
 sc query state=all | findstr /B SERVICE_NAME >"%tmpfile%"
 for /f "tokens=2* delims=: " %%s in (%tmpfile%) do (
     for %%n in ( %* ) do (
