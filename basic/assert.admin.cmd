@@ -5,9 +5,10 @@ echo =============================================
 echo          Check you are administrator.
 echo ---------------------------------------------
 echo  usage:
-echo    assert.admin
-echo    # if errorlevel 1 echo not administrator
+echo    call assert.admin
+echo    # if not errorlevel 1 echo administrator.
 echo =============================================
 exit /b
 :main
 openfiles >nul 2>&1
+exit /b %errorlevel%
