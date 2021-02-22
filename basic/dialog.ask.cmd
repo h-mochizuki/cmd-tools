@@ -5,13 +5,13 @@ echo =============================================
 echo             Show confirm dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dialog.confirm "Are you sure?"
+echo    dialog.ask "Are you sure?"
 echo    #if errorlevel 1 exit /b 1
 echo  args:
 echo    1: input-string or input-stream
 echo; 
 echo  caution: argment is required.
-echo    dialog.confirm -^> FREEZE!! WAIT INPUT.
+echo    dialog.ask -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b
 :main
