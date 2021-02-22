@@ -13,4 +13,5 @@ exit /b
 if "x%~1"=="x" exit /b
 for /f "eol=# tokens=1,* delims==" %%i in ( %~f1 ) do (
     set "%%i=%%j"
+    echo "%%i=%%j"
 )
