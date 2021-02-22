@@ -23,9 +23,17 @@ if "x%arg%"=="x" (
 )
 echo "%arg%"| findstr /C:" " >nul 2>&1
 if errorlevel 1 (
-    set "result=%result%%arg% "
+    if "x%result%"=="x" (
+        set "result=%arg%"
+    ) else (
+        set "result=%result% %arg%"
+    )
 ) else (
-    set "result=%result%__{double_quote}__%arg%__{double_quote}__ "
+    if "x%result%"=="x" (
+        set "result=__{double_quote}__%arg%__{double_quote}__"
+    ) else (
+        set "result=%result% __{double_quote}__%arg%__{double_quote}__"
+    )
 )
 shift
 goto :next
