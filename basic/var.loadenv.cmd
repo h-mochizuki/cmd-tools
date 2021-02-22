@@ -4,7 +4,7 @@ echo =============================================
 echo        Load variables from env file.
 echo ---------------------------------------------
 echo  usage:
-echo    val.loadenv file
+echo    var.loadenv file
 echo  args:
 echo    1: environment file path
 echo =============================================
