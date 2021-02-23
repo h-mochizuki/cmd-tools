@@ -5,9 +5,9 @@ echo =============================================
 echo            Kill service process.
 echo ---------------------------------------------
 echo  usage:
-echo    srv.kill [service name]...
+echo    srv_kill [service name]...
 echo  ex:
-echo    srv.kill a_service
+echo    srv_kill a_service
 echo    # abort a_service(pid:123)? [y/N]^> y
 echo    # -^> a_service was abort.
 echo  args:
@@ -21,7 +21,7 @@ call adm_asadmin "%~f0" %*
 if errorlevel 1 exit /b
 
 set "elevel=0"
-for /f "usebackq tokens=1,2,3" %%s in (`srv.list %*`) do (
+for /f "usebackq tokens=1,2,3" %%s in (`srv_list %*`) do (
     if "x%%s"=="xSERVICE_NAME:" set "name=%%t"
     if "x%%s"=="xSTATE" set "state=%%t"
     if "x%%s"=="xPID" (
