@@ -14,6 +14,6 @@ echo =============================================
 exit /b 1
 :main
 call %~dp0path.include
-call assert.admin
+call adm.isadmin
 if not errorlevel 1 exit /b
 powershell Start-Process -verb runAs cmd -ArgumentList '/k ""cd /d %cd%""'

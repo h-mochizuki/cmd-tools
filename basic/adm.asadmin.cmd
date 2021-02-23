@@ -20,7 +20,7 @@ exit /b 1
 :main
 if "x%~1"=="x" exit /b
 call %~dp0path.include
-call assert.admin
+call adm.isadmin
 if not errorlevel 1 exit /b
 
 call var.setf args arr.remains %*

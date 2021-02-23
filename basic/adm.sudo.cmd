@@ -26,7 +26,7 @@ exit /b 1
 call %~dp0path.include
 
 set "command=%*"
-call assert.admin
+call adm.isadmin
 if not errorlevel 1 goto :admin
 set "command=%command:`n=^&%"
 set "command=%command:`l=^|%"
