@@ -4,10 +4,10 @@ echo =============================================
 echo    Return option exists, value and remains.
 echo ---------------------------------------------
 echo  usage:
-echo    var.getopt [opts] [option] [arguments]...
+echo    var_getopt [opts] [option] [arguments]...
 echo  ex:
 echo    echo %%* -^> 1 "2" /p value 3
-echo    call var.getopt /v /p %%*
+echo    call var_getopt /v /p %%*
 echo    if not errorlevel 1 (
 echo      echo %%_opt_name_%%  -^> /p
 echo      echo %%_opt_value_%% -^> value
@@ -21,7 +21,7 @@ echo    echo %%2 -^> "2"
 echo    echo %%3 -^> 3
 echo;
 echo    # easy way:
-echo    call var.getopt /v /p %%* ^&^& %%_opt_shift_%%
+echo    call var_getopt /v /p %%* ^&^& %%_opt_shift_%%
 echo    if not "x%%_opt_value_%%"=="x" set value=%%_opt_value_%%
 echo  opts:
 echo    /v: set value to _opt_value_

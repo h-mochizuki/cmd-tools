@@ -19,7 +19,7 @@ if "x%~1"=="x" (
 )
 
 call %~dp0path_include
-call var.setf tmpfile file_temp
+call var_setf tmpfile file_temp
 sc query state=all | findstr /B SERVICE_NAME >"%tmpfile%"
 for /f "tokens=2* delims=: " %%s in (%tmpfile%) do (
     for %%n in ( %* ) do (
