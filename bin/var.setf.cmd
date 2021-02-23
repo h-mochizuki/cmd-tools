@@ -6,7 +6,7 @@ echo ---------------------------------------------
 echo  usage:
 echo    var.setf [name] [command]
 echo  ex:
-echo    var.setf tempfile file.tmp
+echo    var.setf tempfile file_tmp
 echo    echo %%tempfile%% -^> %%temp%%\bat~123.tmp
 echo  args:
 echo    1: variable name [require]

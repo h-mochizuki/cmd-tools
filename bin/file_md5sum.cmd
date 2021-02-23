@@ -5,15 +5,15 @@ echo =============================================
 echo             Show md5sum hash.
 echo ---------------------------------------------
 echo  usage:
-echo    file.md5sum [file]...
+echo    file_md5sum [file]...
 echo  ex:
-echo    file.md5sum file -^> 2786...
+echo    file_md5sum file -^> 2786...
 echo  args:
 echo    1+: file path
 echo;
 echo  caution:
 echo    argment is required.
-echo    ex) file.md5sum -^> FREEZE!! WAIT INPUT.
+echo    ex) file_md5sum -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

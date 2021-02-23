@@ -5,9 +5,9 @@ echo =============================================
 echo          Return temporary file path.
 echo ---------------------------------------------
 echo  usage:
-echo    file.temp [folder] [postfix]
+echo    file_temp [folder] [postfix]
 echo  ex:
-echo    file.temp -^> %%temp%%\bat~123.tmp
+echo    file_temp -^> %%temp%%\bat~123.tmp
 echo  args:
 echo    1: folder path [create %%temp%% when empty]
 echo    2: postfix [append tmp when empty]
