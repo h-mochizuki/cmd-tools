@@ -5,9 +5,9 @@ echo =============================================
 echo         Return current unixtime.
 echo ---------------------------------------------
 echo  usage:
-echo    time.unixtime
+echo    time_unixtime
 echo  ex:
-echo    time.unixtime -^> 16138...
+echo    time_unixtime -^> 16138...
 echo =============================================
 exit /b 1
 :main

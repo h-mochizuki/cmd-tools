@@ -5,9 +5,9 @@ echo =============================================
 echo                Wait seconds.
 echo ---------------------------------------------
 echo  usage:
-echo    time.waitsec [seconds]
+echo    time_waitsec [seconds]
 echo  ex:
-echo    time.waitsec 10
+echo    time_waitsec 10
 echo  args:
 echo    1: seconds
 echo =============================================
