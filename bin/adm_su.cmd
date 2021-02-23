@@ -13,7 +13,7 @@ echo    if you are not administrator.
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 call adm_isadmin
 if not errorlevel 1 exit /b
 powershell Start-Process -verb runAs cmd -ArgumentList '/k ""cd /d %cd%""'

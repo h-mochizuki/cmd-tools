@@ -19,7 +19,7 @@ echo    echo str   ^| str.length -^> 6
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do call :calc "%%~i"
 exit /b
 

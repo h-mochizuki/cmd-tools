@@ -74,7 +74,7 @@ exit /b 1
 
 :sub
 setlocal
-call %~dp0path.include
+call %~dp0path_include
 set "cnt=0"
 if "x%~1"=="x/v" set "hasval=1" & shift
 if "x%~1"=="x" exit /b 1

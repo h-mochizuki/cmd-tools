@@ -21,7 +21,7 @@ echo    ex) adm_sudo echo abc^^^| findstr a
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 
 set "command=%*"
 call adm_isadmin

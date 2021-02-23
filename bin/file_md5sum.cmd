@@ -17,7 +17,7 @@ echo    ex) file_md5sum -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do (
     certutil -hashfile "%%~fi" MD5 | findstr /V /B "CertUtil: "
 )

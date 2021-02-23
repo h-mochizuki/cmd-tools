@@ -4,9 +4,9 @@ echo =============================================
 echo          Append folder path to PATH.
 echo ---------------------------------------------
 echo  usage:
-echo    path.include [folder or file]
+echo    path_include [folder or file]
 echo  ex:
-echo    path.include "C:\path\to\folder"
+echo    path_include "C:\path\to\folder"
 echo  args:
 echo    1: folder or file path [set %~dp0 if empty]
 echo =============================================

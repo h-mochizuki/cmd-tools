@@ -5,18 +5,18 @@ echo =============================================
 echo    Return absolute path from your inputs.
 echo ---------------------------------------------
 echo  usage:
-echo    path.absolute [folder or file]...
+echo    path_absolute [folder or file]...
 echo  ex:
-echo    path.absolute FILE -^> C:\PATH\TO\FILE
-echo    echo FILE ^| path.absolute -^> C:\PATH\TO\FILE
+echo    path_absolute FILE -^> C:\PATH\TO\FILE
+echo    echo FILE ^| path_absolute -^> C:\PATH\TO\FILE
 echo  args:
 echo    1+: folder or file name
 echo; 
 echo  caution:
 echo    argment is required.
-echo    ex) path.absolute -^> FREEZE!! WAIT INPUT.
+echo    ex) path_absolute -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do echo %%~fi

@@ -18,7 +18,7 @@ echo    ex) str.reverse -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do call :rev "%%~i"
 exit /b
 

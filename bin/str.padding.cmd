@@ -16,7 +16,7 @@ echo    3: padding charactor[default: whitespace]
 echo =============================================
 exit /b 1
 :main
-call %~dp0path.include
+call %~dp0path_include
 
 set "cnt=0"
 set "input=%~1"
