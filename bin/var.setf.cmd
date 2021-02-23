@@ -18,7 +18,7 @@ echo =============================================
 exit /b 1
 :main
 if "x%~1"=="x" exit /b
-call %~dp0path.include
+call %~dp0path_include
 
 set "%~1="
 for /f "usebackq tokens=*" %%c in (`arr_remains %*`) do (
