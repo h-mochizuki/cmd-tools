@@ -5,15 +5,15 @@ echo =============================================
 echo             Show message dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dialog.msg [message]
+echo    dlg_msg [message]
 echo  ex:
-echo    dialog.msg "Good morning!!"
+echo    dlg_msg "Good morning!!"
 echo  args:
 echo    1: message
 echo; 
 echo  caution:
 echo    argment is required.
-echo    ex) dialog.msg -^> FREEZE!! WAIT INPUT.
+echo    ex) dlg_msg -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

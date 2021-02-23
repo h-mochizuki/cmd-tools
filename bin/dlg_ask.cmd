@@ -5,9 +5,9 @@ echo =============================================
 echo             Show confirm dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dialog.ask [message]
+echo    dlg_ask [message]
 echo  ex:
-echo    dialog.ask "Are you sure?"
+echo    dlg_ask "Are you sure?"
 echo    if errorlevel 1 echo No! -^> No!
 echo  args:
 echo    1: message
@@ -17,7 +17,7 @@ echo    1: no
 echo; 
 echo  caution:
 echo    argment is required.
-echo    ex) dialog.ask -^> FREEZE!! WAIT INPUT.
+echo    ex) dlg_ask -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main
