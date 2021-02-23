@@ -5,8 +5,10 @@ echo =============================================
 echo          Return array item count.
 echo ---------------------------------------------
 echo  usage:
-echo    arr.count 1 2 3 -^> 3
-echo    arr.count -^> 0
+echo    arr.count [arguments]...
+echo  ex:
+echo    call arr.count 1 2 3 -^> 3
+echo    call arr.count -^> 0
 echo  args:
 echo    1+: arguments
 echo =============================================
