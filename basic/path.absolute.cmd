@@ -12,8 +12,9 @@ echo    echo FILE ^| path.absolute -^> C:\PATH\TO\FILE
 echo  args:
 echo    1+: folder or file name
 echo; 
-echo  caution: argment is required.
-echo    path.absolute -^> FREEZE!! WAIT INPUT.
+echo  caution:
+echo    argment is required.
+echo    ex) path.absolute -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

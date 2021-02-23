@@ -12,8 +12,9 @@ echo    echo string ^| str.stream -^> string
 echo  args:
 echo    1+: target strings
 echo;
-echo  caution: argment is required.
-echo    str.stream -^> FREEZE!! WAIT INPUT.
+echo  caution:
+echo    argment is required.
+echo    ex) str.stream -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

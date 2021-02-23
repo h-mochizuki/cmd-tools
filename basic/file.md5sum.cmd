@@ -11,8 +11,9 @@ echo    file.md5sum file -^> 2786...
 echo  args:
 echo    1+: file path
 echo;
-echo  caution: argment is required.
-echo    file.md5sum -^> FREEZE!! WAIT INPUT.
+echo  caution:
+echo    argment is required.
+echo    ex) file.md5sum -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

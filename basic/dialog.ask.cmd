@@ -15,8 +15,9 @@ echo  return code:
 echo    0: yes
 echo    1: no
 echo; 
-echo  caution: argment is required.
-echo    dialog.ask -^> FREEZE!! WAIT INPUT.
+echo  caution:
+echo    argment is required.
+echo    ex) dialog.ask -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

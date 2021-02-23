@@ -12,8 +12,9 @@ echo    echo biz^| str.reverse -^> zib
 echo  args:
 echo    1+: target strings
 echo;
-echo  caution: argment is required.
-echo    str.reverse -^> FREEZE!! WAIT INPUT.
+echo  caution:
+cho     argment is required.
+echo    ex) str.reverse -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

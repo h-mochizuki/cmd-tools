@@ -11,8 +11,9 @@ echo    dialog.msg "Good morning!!"
 echo  args:
 echo    1: message
 echo; 
-echo  caution: argment is required.
-echo    dialog.msg -^> FREEZE!! WAIT INPUT.
+echo  caution:
+echo    argment is required.
+echo    ex) dialog.msg -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main
