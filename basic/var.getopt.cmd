@@ -6,19 +6,23 @@ echo ---------------------------------------------
 echo  usage:
 echo    var.getopt [opts] [option] [arguments]...
 echo  ex:
-echo    # echo %%* -^> 1 "2" /p value 3
+echo    echo %%* -^> 1 "2" /p value 3
 echo    call var.getopt /v /p %%*
-echo    # if not errorlevel 1 (
-echo    #   echo %%_opt_name_%%  -^> /p
-echo    #   echo %%_opt_value_%% -^> value
-echo    #   echo %%_opt_remains_%% -^> 1 "2" 3
-echo    #   echo %%_opt_shift_%% -^> shift /3 ^& shift /3
-echo    #   rem Do shift!!
-echo    #   %%_opt_shift_%%
-echo    # )
-echo    # echo %%1 -^> 1
-echo    # echo %%2 -^> "2"
-echo    # echo %%3 -^> 3
+echo    if not errorlevel 1 (
+echo      echo %%_opt_name_%%  -^> /p
+echo      echo %%_opt_value_%% -^> value
+echo      echo %%_opt_remains_%% -^> 1 "2" 3
+echo      echo %%_opt_shift_%% -^> shift /3 ^& shift /3
+echo      rem Do shift!!
+echo      %%_opt_shift_%%
+echo    )
+echo    echo %%1 -^> 1
+echo    echo %%2 -^> "2"
+echo    echo %%3 -^> 3
+echo;
+echo    # easy way:
+echo    call var.getopt /v /p %%* ^&^& %%_opt_shift_%%
+echo    set value=%%_opt_value_%%
 echo  opts:
 echo    /v: set value to _opt_value_
 echo        set //v instead of /v if use /v option and empty value.
