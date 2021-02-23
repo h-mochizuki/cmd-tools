@@ -87,23 +87,23 @@ set "remains= "
 shift
 if "x%~1"=="x" (
     if exist option.env (
-        echo set _opt_remains_=%remains:~1% >> option.env
+        call :print "set _opt_remains_=%remains:~1%">> option.env
         exit /b 0
     ) else (
-        echo set _opt_name_=%opt% >> option.env
-        echo set _opt_remains_=%remains:~1% >> option.env
+        call :print "set _opt_name_=%opt%">> option.env
+        call :print "set _opt_remains_=%remains:~1%">> option.env
         exit /b 1
     )
 )
 set /a "cnt=%cnt%+1"
 if "x%~1"=="x%opt%" (
     if not exist option.env (
-        echo set _opt_name_=%1 >> option.env
+        call :print "set _opt_name_=%1">> option.env
         if "x%hasval%"=="x" (
-            echo set _opt_shift_=shift /%cnt% >> option.env
+            call :print "set _opt_shift_=shift /%cnt%">> option.env
         ) else (
-            echo set _opt_value_=%2 >> option.env
-            echo set _opt_shift_=shift /%cnt% ^& shift /%cnt% >> option.env
+            call :print "set _opt_value_=%2">> option.env
+            call :print "set _opt_shift_=shift /%cnt% & shift /%cnt%">> option.env
             shift
         )
     ) else (
@@ -126,3 +126,6 @@ goto :next
 :empty
 if "x%~1"=="x" exit /b 0
 exit /b 1
+
+:print
+echo %~1
