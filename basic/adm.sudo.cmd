@@ -5,7 +5,9 @@ echo =============================================
 echo     Execute command as administrator role.
 echo ---------------------------------------------
 echo  usage:
-echo    adm.sudo echo abc -^> abc
+echo    adm.sudo [command]
+echo  ex:
+echo    call adm.sudo echo abc -^> abc
 echo  args:
 echo    1+: commands
 echo;

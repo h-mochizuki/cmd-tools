@@ -5,10 +5,16 @@ echo =============================================
 echo            Rerun as administrator.
 echo ---------------------------------------------
 echo  usage:
+echo    adm.asadmin [caller] [arguments]...
+echo  ex:
 echo    adm.asadmin "%~f0" %*
 echo  args:
 echo    1: caller file path
-echo    2: original args
+echo    2: original arguments
+echo;
+echo  caution:
+echo    open another prompt,
+echo    if you are not administrator.
 echo =============================================
 exit /b
 :main
