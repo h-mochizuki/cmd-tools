@@ -21,7 +21,8 @@ echo    echo %%2 -^> "2"
 echo    echo %%3 -^> 3
 echo;
 echo    # easy way:
-echo    call var_getopt /v /p %%* ^&^& %%_opt_shift_%%
+echo    call var_getopt /v /p %%*
+echo    if not errorlevel 1 %%_opt_shift_%%
 echo    if not "x%%_opt_value_%%"=="x" set value=%%_opt_value_%%
 echo  opts:
 echo    /v: set value to _opt_value_
