@@ -22,7 +22,7 @@ echo    echo %%3 -^> 3
 echo;
 echo    # easy way:
 echo    call var.getopt /v /p %%* ^&^& %%_opt_shift_%%
-echo    set value=%%_opt_value_%%
+echo    if not "x%%_opt_value_%%"=="x" set value=%%_opt_value_%%
 echo  opts:
 echo    /v: set value to _opt_value_
 echo        set //v instead of /v if use /v option and empty value.
