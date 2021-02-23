@@ -34,7 +34,7 @@ exit /b !elevel!
 :confirm
 if "x%~2"=="x" exit /b
 if "x%~3"=="xSTOPPED" exit /b
-call assert.yn "abort %~2(pid:%~1)?"
+call yn "abort %~2(pid:%~1)?"
 if not errorlevel 1 (
     taskkill /pid %~1 /f
     if errorlevel 1 (

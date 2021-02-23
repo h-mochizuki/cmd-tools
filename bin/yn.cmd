@@ -5,9 +5,9 @@ echo =============================================
 echo            Confirm yes or no.
 echo ---------------------------------------------
 echo  usage:
-echo    assert.yn [message]
+echo    yn [message]
 echo  ex:
-echo    assert.yn
+echo    yn
 echo    # Are you sure? [y/N]^> n
 echo    if errorlevel 1 echo No! -^> No!
 echo  args:
