@@ -5,7 +5,9 @@ echo =============================================
 echo   Return arguments without first argument.
 echo ---------------------------------------------
 echo  usage:
-echo    arr.remains 1 2 "3 4" 5 -^> 2 "3 4" 5
+echo    arr.remains [arguments]...
+echo  ex:
+echo    call arr.remains 1 2 "3 4" 5 -^> 2 "3 4" 5
 echo  args:
 echo    1+: arguments
 echo =============================================

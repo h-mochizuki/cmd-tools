@@ -5,11 +5,16 @@ echo =============================================
 echo            Confirm yes or no.
 echo ---------------------------------------------
 echo  usage:
-echo    assert.yn
-echo    # Are you sure? [y/N]^> 1
-echo    # if errorlevel 1 echo No! -^> No!
+echo    assert.yn [message]
+echo  ex:
+echo    call assert.yn
+echo    # Are you sure? [y/N]^> n
+echo    if errorlevel 1 echo No! -^> No!
 echo  args:
-echo    1: confirm message.
+echo    1: confirm message [option]
+echo  return code:
+echo    0: yes
+echo    1: no
 echo =============================================
 exit /b
 :main

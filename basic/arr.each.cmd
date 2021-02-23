@@ -5,9 +5,11 @@ echo =============================================
 echo       Execute command each input-stream.
 echo ---------------------------------------------
 echo  usage:
+echo    arr.each [command]
+echo  ex:
 echo    echo a^| arr.each echo {}{} -^> aa
 echo  args:
-echo    1+: commands [{} replaced argument]
+echo    1: command [{} replaced stream item]
 echo;
 echo  caution: input-stream required.
 echo    arr.each -^> FREEZE!! WAIT INPUT.

@@ -5,10 +5,15 @@ echo =============================================
 echo             Show confirm dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dialog.ask "Are you sure?"
-echo    #if errorlevel 1 exit /b 1
+echo    dialog.ask [message]
+echo  ex:
+echo    call dialog.ask "Are you sure?"
+echo    if errorlevel 1 echo No! -^> No!
 echo  args:
-echo    1: input-string or input-stream
+echo    1: message
+echo  return code:
+echo    0: yes
+echo    1: no
 echo; 
 echo  caution: argment is required.
 echo    dialog.ask -^> FREEZE!! WAIT INPUT.

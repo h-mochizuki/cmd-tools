@@ -5,9 +5,11 @@ echo =============================================
 echo             Show message dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dialog.msg "Good morning!!"
+echo    dialog.msg [message]
+echo  ex:
+echo    call dialog.msg "Good morning!!"
 echo  args:
-echo    1: input-string or input-stream
+echo    1: message
 echo; 
 echo  caution: argment is required.
 echo    dialog.msg -^> FREEZE!! WAIT INPUT.
