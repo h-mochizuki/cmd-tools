@@ -16,10 +16,10 @@ for /f "usebackq tokens=1,2,3,4,5" %%a in ( `netstat -ano` ) do (
     set "COMMAND="
     set "PRT=%%a"
     if "x!PRT!"=="xTCP" (
-        for /f "usebackq tokens=*" %%f in ( `pad "%%b" 21 -` ) do set "LADD=%%f"
-        for /f "usebackq tokens=*" %%f in ( `pad "%%c" 20 -` ) do set "FADD=%%f"
-        for /f "usebackq tokens=*" %%f in ( `pad "%%d" 11 -` ) do set "STS=%%f"
-        for /f "usebackq tokens=*" %%f in ( `pad "%%e" 5 -` ) do set "PID=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%b" 21 -` ) do set "LADD=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%c" 20 -` ) do set "FADD=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%d" 11 -` ) do set "STS=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%e" 5 -` ) do set "PID=%%f"
         for /f "usebackq tokens=*" %%f in ( `tasklist /SVC /NH /FO CSV /FI "PID eq %%e"` ) do (
             set LINE=%%f
             set LINE=!LINE:","= !
@@ -28,10 +28,10 @@ for /f "usebackq tokens=1,2,3,4,5" %%a in ( `netstat -ano` ) do (
         echo !PRT! !LADD:-= !  !FADD:-= ! !STS:-= ! !PID:-= ! !COMMAND!
     ) else (
     if "x!PRT!"=="xUDP" (
-        for /f "usebackq tokens=*" %%f in ( `pad "%%b" 21 -` ) do set "LADD=%%f"
-        for /f "usebackq tokens=*" %%f in ( `pad "%%c" 20 -` ) do set "FADD=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%b" 21 -` ) do set "LADD=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%c" 20 -` ) do set "FADD=%%f"
         set "STS=           "
-        for /f "usebackq tokens=*" %%f in ( `pad "%%d" 5 -` ) do set "PID=%%f"
+        for /f "usebackq tokens=*" %%f in ( `str_padding "%%d" 5 -` ) do set "PID=%%f"
         for /f "usebackq tokens=*" %%f in ( `tasklist /SVC /NH /FO CSV /FI "PID eq %%d"` ) do (
             set LINE=%%f
             set LINE=!LINE:","= !
