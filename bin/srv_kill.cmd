@@ -17,7 +17,7 @@ exit /b 1
 :main
 if "x%~1"=="x" exit /b
 call %~dp0path_include
-call adm_asadmin "%~f0" %*
+call adm_rerun "%~f0" %*
 if errorlevel 1 exit /b
 
 set "elevel=0"
