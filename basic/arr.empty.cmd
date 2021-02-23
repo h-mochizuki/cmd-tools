@@ -18,7 +18,5 @@ echo    1: not empty
 echo =============================================
 exit /b
 :main
-call %~dp0path.include
-call var.setf size arr.count %*
-if "x%size%"=="x0" exit /b 0
-exit /b 1
+for %%i in ( %* ) do exit /b 1
+exit /b 0
