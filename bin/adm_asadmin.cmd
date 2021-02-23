@@ -23,6 +23,6 @@ call %~dp0path.include
 call adm_isadmin
 if not errorlevel 1 exit /b
 
-call var.setf args arr.remains %*
+call var.setf args arr_remains %*
 powershell Start-Process -verb runAs cmd -ArgumentList '/c ""cd /d %cd% ^& %~f1 %args%""'
 exit /b 1
