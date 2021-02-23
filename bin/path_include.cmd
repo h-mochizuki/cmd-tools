@@ -8,7 +8,7 @@ echo    path_include [folder or file]
 echo  ex:
 echo    path_include "C:\path\to\folder"
 echo  args:
-echo    1: folder or file path [set %~dp0 if empty]
+echo    1: folder or file path [set %%~dp0 if empty]
 echo =============================================
 exit /b 1
 :main
