@@ -5,9 +5,9 @@ echo =============================================
 echo          Check you are administrator.
 echo ---------------------------------------------
 echo  usage:
-echo    adm.isadmin
+echo    adm_isadmin
 echo  ex:
-echo    adm.isadmin
+echo    adm_isadmin
 echo    if not errorlevel 1 echo I'm admin -^> I'm admin
 echo  return code:
 echo    0: administrator

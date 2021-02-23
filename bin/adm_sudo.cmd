@@ -5,9 +5,9 @@ echo =============================================
 echo     Execute command as administrator role.
 echo ---------------------------------------------
 echo  usage:
-echo    adm.sudo [command]
+echo    adm_sudo [command]
 echo  ex:
-echo    adm.sudo echo abc -^> abc
+echo    adm_sudo echo abc -^> abc
 echo  args:
 echo    1+: commands
 echo;
@@ -17,14 +17,14 @@ echo    if you are not administrator.
 echo  caution2:
 echo    have to escape like "^|" or "^&"
 echo    if use "|" or "&".
-echo    ex) adm.sudo echo abc^^^| findstr a
+echo    ex) adm_sudo echo abc^^^| findstr a
 echo =============================================
 exit /b 1
 :main
 call %~dp0path.include
 
 set "command=%*"
-call adm.isadmin
+call adm_isadmin
 if not errorlevel 1 goto :admin
 set "command=%command:&=^&%"
 set "command=%command:|=^|%"

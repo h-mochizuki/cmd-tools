@@ -5,9 +5,9 @@ echo =============================================
 echo            Rerun as administrator.
 echo ---------------------------------------------
 echo  usage:
-echo    adm.asadmin [caller] [arguments]...
+echo    adm_asadmin [caller] [arguments]...
 echo  ex:
-echo    adm.asadmin "%~f0" %*
+echo    adm_asadmin "%~f0" %*
 echo  args:
 echo    1: caller file path
 echo    2: original arguments
@@ -20,7 +20,7 @@ exit /b 1
 :main
 if "x%~1"=="x" exit /b
 call %~dp0path.include
-call adm.isadmin
+call adm_isadmin
 if not errorlevel 1 exit /b
 
 call var.setf args arr.remains %*

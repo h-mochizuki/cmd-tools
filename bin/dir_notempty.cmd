@@ -5,9 +5,9 @@ echo =============================================
 echo           Check folder is not empty.
 echo ---------------------------------------------
 echo  usage:
-echo    dir.notempty [option] [folder]
+echo    dir_notempty [option] [folder]
 echo  ex:
-echo    dir.notempty %%CD%% ^>nul
+echo    dir_notempty %%CD%% ^>nul
 echo    if not errorlevel 1 echo empty!
 echo  option:
 echo    /r: find recursively

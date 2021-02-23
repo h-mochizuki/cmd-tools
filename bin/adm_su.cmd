@@ -5,7 +5,7 @@ echo =============================================
 echo          Switch administrator role.
 echo ---------------------------------------------
 echo  usage:
-echo    adm.su
+echo    adm_su
 echo;
 echo  caution:
 echo    open another prompt,
@@ -14,6 +14,6 @@ echo =============================================
 exit /b 1
 :main
 call %~dp0path.include
-call adm.isadmin
+call adm_isadmin
 if not errorlevel 1 exit /b
 powershell Start-Process -verb runAs cmd -ArgumentList '/k ""cd /d %cd%""'
