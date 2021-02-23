@@ -7,7 +7,7 @@ echo ---------------------------------------------
 echo  usage:
 echo    adm_rerun [caller] [arguments]...
 echo  ex:
-echo    adm_rerun "%~f0" %*
+echo    adm_rerun "%~f0" %%*
 echo  args:
 echo    1: caller file path
 echo    2: original arguments
