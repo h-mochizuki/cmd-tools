@@ -16,7 +16,7 @@ echo  caution:
 echo    open another prompt,
 echo    if you are not administrator.
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" exit /b
 call %~dp0path.include

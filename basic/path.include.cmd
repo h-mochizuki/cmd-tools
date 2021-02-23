@@ -4,11 +4,13 @@ echo =============================================
 echo          Append folder path to PATH.
 echo ---------------------------------------------
 echo  usage:
-echo    call path.include "C:\path\to\folder"
+echo    path.include [folder or file]
+echo  ex:
+echo    path.include "C:\path\to\folder"
 echo  args:
-echo    1: folder path [set %~dp0 if empty]
+echo    1: folder or file path [set %~dp0 if empty]
 echo =============================================
-exit /b
+exit /b 1
 :main
 pushd %~dp0
 if "x%~1"=="x" (

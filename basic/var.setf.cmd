@@ -4,16 +4,18 @@ echo =============================================
 echo         Set result value to variable.
 echo ---------------------------------------------
 echo  usage:
-echo    call var.setf tempfile file.tmp
-echo    # echo %%tempfile%% -^> %%temp%%\bat~123.tmp
+echo    var.setf [name] [command]
+echo  ex:
+echo    var.setf tempfile file.tmp
+echo    echo %%tempfile%% -^> %%temp%%\bat~123.tmp
 echo  args:
 echo    1: variable name [require]
-echo    2+: commands
+echo    2: commands
 echo;
 echo  caution:
 echo    last value is set if multiple results.
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" exit /b
 call %~dp0path.include

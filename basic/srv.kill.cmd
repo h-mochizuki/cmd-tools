@@ -5,13 +5,15 @@ echo =============================================
 echo            Kill service process.
 echo ---------------------------------------------
 echo  usage:
+echo    srv.kill [service name]...
+echo  ex:
 echo    srv.kill a_service
 echo    # abort a_service(pid:123)? [y/N]^> y
 echo    # -^> a_service was abort.
 echo  args:
 echo    1+: service name
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" exit /b
 call %~dp0path.include

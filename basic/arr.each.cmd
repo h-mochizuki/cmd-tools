@@ -14,7 +14,7 @@ echo;
 echo  caution: input-stream required.
 echo    arr.each -^> FREEZE!! WAIT INPUT.
 echo =============================================
-exit /b
+exit /b 1
 :main
 set "command=%*"
 set "replacer={}"

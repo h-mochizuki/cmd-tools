@@ -38,7 +38,7 @@ echo    _opt_value_: option value if option has value
 echo    _opt_remains_: remain argumengs
 echo    _opt_shift_: shift commands
 echo =============================================
-exit /b
+exit /b 1
 :main
 pushd "%~dp0"
 set _opt_name_=

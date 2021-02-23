@@ -7,11 +7,11 @@ echo ---------------------------------------------
 echo  usage:
 echo    arr.remains [arguments]...
 echo  ex:
-echo    call arr.remains 1 2 "3 4" 5 -^> 2 "3 4" 5
+echo    arr.remains 1 2 "3 4" 5 -^> 2 "3 4" 5
 echo  args:
 echo    1+: arguments
 echo =============================================
-exit /b
+exit /b 1
 :main
 shift
 if "x%~1"=="x" exit /b

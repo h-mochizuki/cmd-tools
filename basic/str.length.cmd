@@ -5,18 +5,19 @@ echo =============================================
 echo             Count string length.
 echo ---------------------------------------------
 echo  usage:
+echo    str.length [string]...
+echo  ex:
 echo    str.length string -^> 6
 echo    echo str^| str.length -^> 3
-echo;
 echo  args:
-echo    1: input-string or input-stream
+echo    1+: target strings
 echo;
 echo  caution1: argment is required.
 echo    str.length -^> FREEZE!! WAIT INPUT.
 echo  caution2: white space is counted.
 echo    echo str   ^| str.length -^> 6
 echo =============================================
-exit /b
+exit /b 1
 :main
 call %~dp0path.include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do call :calc "%%~i"

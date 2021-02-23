@@ -7,7 +7,7 @@ echo ---------------------------------------------
 echo  usage:
 echo    assert.yn [message]
 echo  ex:
-echo    call assert.yn
+echo    assert.yn
 echo    # Are you sure? [y/N]^> n
 echo    if errorlevel 1 echo No! -^> No!
 echo  args:
@@ -16,7 +16,7 @@ echo  return code:
 echo    0: yes
 echo    1: no
 echo =============================================
-exit /b
+exit /b 1
 :main
 set "result="
 set "msg=Are you sure?"

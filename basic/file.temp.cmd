@@ -5,12 +5,14 @@ echo =============================================
 echo          Return temporary file path.
 echo ---------------------------------------------
 echo  usage:
+echo    file.temp [folder] [postfix]
+echo  ex:
 echo    file.temp -^> %%temp%%\bat~123.tmp
 echo  args:
 echo    1: folder path [create %%temp%% when empty]
 echo    2: postfix [append tmp when empty]
 echo =============================================
-exit /b
+exit /b 1
 :main
 set "tmpdir=%tmp%"
 if not "x%~1"=="x" set "tmpdir=%~1"

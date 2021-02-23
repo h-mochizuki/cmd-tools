@@ -5,14 +5,16 @@ echo =============================================
 echo           Check folder is not empty.
 echo ---------------------------------------------
 echo  usage:
-echo    call dir.notempty [folder] ^>nul
-echo    # if not errorlevel 1 echo empty!
+echo    dir.notempty [option] [folder]
+echo  ex:
+echo    dir.notempty %%CD%% ^>nul
+echo    if not errorlevel 1 echo empty!
 echo  option:
 echo    /r: find recursively
 echo  args:
 echo    1: folder path
 echo =============================================
-exit /b
+exit /b 1
 :main
 set "lavel=:find"
 if "x%~1"=="x/r" set "lavel=:findr" & shift

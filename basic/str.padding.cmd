@@ -5,6 +5,8 @@ echo =============================================
 echo           Pad string with padding.
 echo ---------------------------------------------
 echo  usage:
+echo    str.padding [string] [size] [charactor]
+echo  ex:
 echo    str.padding abcd 10 * -^> abcd******
 echo    str.padding 1234 -10 0 -^> 0000001234
 echo  args:
@@ -12,7 +14,7 @@ echo    1: input-string
 echo    2: padding size[right justified if minus]
 echo    3: padding charactor[default: whitespace]
 echo =============================================
-exit /b
+exit /b 1
 :main
 call %~dp0path.include
 

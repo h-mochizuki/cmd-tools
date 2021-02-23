@@ -7,6 +7,7 @@ echo ---------------------------------------------
 echo  usage:
 echo    history
 echo =============================================
-exit /b
+exit /b 1
 :main
 doskey /history
+exit 0

@@ -5,11 +5,13 @@ echo =============================================
 echo         Show service list or detail.
 echo ---------------------------------------------
 echo  usage:
-echo    srv.info
+echo    srv.list [service name]...
+echo  ex:
+echo    srv.list MySQL -^> SERVICE_NAM...
 echo  args:
-echo    1: service name [show list when empty]
+echo    1+: service name [show list when empty]
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" (
     sc query state=all

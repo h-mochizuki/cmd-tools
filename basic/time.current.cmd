@@ -5,8 +5,11 @@ echo =============================================
 echo             Return current time.
 echo ---------------------------------------------
 echo  usage:
-echo    time.current [format] -^> 2021/02/21 06:54:34
-echo  format:
+echo    time.current [format]
+echo  ex:
+echo    time.current -^> 2021/02/21 06:54:34
+echo    time.current yyyyMMdd -^> 20210221
+echo  format: (default: yyyy/MM/dd HH:mm:ss)
 echo    yyyy        : four digits 'year'
 echo    yy          : last tow digits 'year'
 echo    MM, mo, m12 : 'month'
@@ -17,7 +20,7 @@ echo    hh, h12     : 12-'hour' notation
 echo    mm, mi, m60 : 'minuts'
 echo    ss          : 'seconds'
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" (
     echo;| call cscript //nologo /E:JScript "%~f0"

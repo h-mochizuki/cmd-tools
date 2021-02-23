@@ -4,11 +4,15 @@ echo =============================================
 echo        Load variables from env file.
 echo ---------------------------------------------
 echo  usage:
-echo    var.loadenv [file]
+echo    var.loadenv [env file]
+echo  ex:
+echo    type some.txt -^> KEY=VALUE
+echo    var.loadenv some.txt
+echo    echo %%KEY%% ^-> VALUE
 echo  args:
-echo    1: file path
+echo    1: environment file path
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" exit /b
 for /f "eol=# tokens=1,* delims==" %%i in ( %~f1 ) do (

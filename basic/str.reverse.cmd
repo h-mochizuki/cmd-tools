@@ -5,15 +5,17 @@ echo =============================================
 echo               Reverse string
 echo ---------------------------------------------
 echo  usage:
+echo    str.reverse [string]...
+echo  ex:
 echo    str.reverse abcd -^> dcba
 echo    echo biz^| str.reverse -^> zib
 echo  args:
-echo    1: input-string or input-stream
+echo    1+: target strings
 echo;
 echo  caution: argment is required.
 echo    str.reverse -^> FREEZE!! WAIT INPUT.
 echo =============================================
-exit /b
+exit /b 1
 :main
 call %~dp0path.include
 for /f "usebackq tokens=*" %%i in (`str.stream %*`) do call :rev "%%~i"

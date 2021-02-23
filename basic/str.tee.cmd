@@ -5,13 +5,16 @@ echo =============================================
 echo   Input-stream to output-stream and file.
 echo ---------------------------------------------
 echo  usage:
+echo    str.tee [option] [log file]
+echo  ex:
 echo    echo abc ^| str.tee log.txt -^> abc
-echo    # cat log.txt -^> abc
+echo    type log.txt -^> abc
+echo  opts:
+echo    /a -a: append mode
 echo  args:
-echo    1: -a append mode[option]
-echo    2: log-file path[option]
+echo    1: log-file path[option]
 echo =============================================
-exit /b
+exit /b 1
 :main
 findstr .* | call cscript //nologo /E:JScript "%~f0" %*
 exit /b
@@ -21,7 +24,7 @@ var argCnt = WScript.Arguments.Count();
 var mode = 2;
 var filename = "";
 for(var i = 0; i < WScript.Arguments.Count(); i++){
-    if (WScript.Arguments(i) == "-a") {
+    if (WScript.Arguments(i) == "-a" || WScript.Arguments(i) == "/a") {
         mode = 8;
     } else {
         filename = WScript.Arguments(i) || "";

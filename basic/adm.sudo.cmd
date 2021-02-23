@@ -7,7 +7,7 @@ echo ---------------------------------------------
 echo  usage:
 echo    adm.sudo [command]
 echo  ex:
-echo    call adm.sudo echo abc -^> abc
+echo    adm.sudo echo abc -^> abc
 echo  args:
 echo    1+: commands
 echo;
@@ -21,7 +21,7 @@ echo  caution3:
 echo    "`n" use instead of line feed.
 echo    adm.sudo echo abc `n pause
 echo =============================================
-exit /b
+exit /b 1
 :main
 call %~dp0path.include
 

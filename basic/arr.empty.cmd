@@ -8,7 +8,7 @@ echo  usage:
 echo    arr.empty [arguments]...
 echo  ex:
 echo    echo %%* -^> 1 2 3
-echo    call arr.count %%*
+echo    call arr.empty %%*
 echo    if not errorlevel 1 echo empty -^> empty
 echo  args:
 echo    1+: arguments
@@ -16,7 +16,7 @@ echo  return code:
 echo    0: empty
 echo    1: not empty
 echo =============================================
-exit /b
+exit /b 1
 :main
 for %%i in ( %* ) do exit /b 1
 exit /b 0

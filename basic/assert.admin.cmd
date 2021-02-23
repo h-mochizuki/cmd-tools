@@ -7,13 +7,13 @@ echo ---------------------------------------------
 echo  usage:
 echo    assert.admin
 echo  ex:
-echo    call assert.admin
+echo    assert.admin
 echo    if not errorlevel 1 echo I'm admin -^> I'm admin
 echo  return code:
 echo    0: administrator
 echo    1: not administrator
 echo =============================================
-exit /b
+exit /b 1
 :main
 openfiles >nul 2>&1
 exit /b %errorlevel%

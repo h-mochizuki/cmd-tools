@@ -7,7 +7,7 @@ echo ---------------------------------------------
 echo  usage:
 echo    dialog.ask [message]
 echo  ex:
-echo    call dialog.ask "Are you sure?"
+echo    dialog.ask "Are you sure?"
 echo    if errorlevel 1 echo No! -^> No!
 echo  args:
 echo    1: message
@@ -18,7 +18,7 @@ echo;
 echo  caution: argment is required.
 echo    dialog.ask -^> FREEZE!! WAIT INPUT.
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" (
     findstr .* | call cscript //nologo /E:JScript "%~f0"

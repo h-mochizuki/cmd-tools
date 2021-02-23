@@ -7,14 +7,14 @@ echo ---------------------------------------------
 echo  usage:
 echo    dialog.msg [message]
 echo  ex:
-echo    call dialog.msg "Good morning!!"
+echo    dialog.msg "Good morning!!"
 echo  args:
 echo    1: message
 echo; 
 echo  caution: argment is required.
 echo    dialog.msg -^> FREEZE!! WAIT INPUT.
 echo =============================================
-exit /b
+exit /b 1
 :main
 if "x%~1"=="x" (
     findstr .* | msg %USERNAME%

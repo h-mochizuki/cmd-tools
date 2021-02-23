@@ -5,9 +5,11 @@ echo =============================================
 echo         Return current unixtime.
 echo ---------------------------------------------
 echo  usage:
+echo    time.unixtime
+echo  ex:
 echo    time.unixtime -^> 16138...
 echo =============================================
-exit /b
+exit /b 1
 :main
 call cscript //nologo /E:JScript "%~f0" %*
 exit /b
