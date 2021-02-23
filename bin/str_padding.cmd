@@ -5,10 +5,10 @@ echo =============================================
 echo           Pad string with padding.
 echo ---------------------------------------------
 echo  usage:
-echo    str.padding [string] [size] [charactor]
+echo    str_padding [string] [size] [charactor]
 echo  ex:
-echo    str.padding abcd 10 * -^> abcd******
-echo    str.padding 1234 -10 0 -^> 0000001234
+echo    str_padding abcd 10 * -^> abcd******
+echo    str_padding 1234 -10 0 -^> 0000001234
 echo  args:
 echo    1: input-string
 echo    2: padding size[right justified if minus]
@@ -20,7 +20,7 @@ call %~dp0path_include
 
 set "cnt=0"
 set "input=%~1"
-for /f "usebackq" %%i in ( `str.length %input%` ) do set "cnt=%%i"
+for /f "usebackq" %%i in ( `str_length %input%` ) do set "cnt=%%i"
 if %cnt% LEQ 0 exit /b
 
 set "right_justified="

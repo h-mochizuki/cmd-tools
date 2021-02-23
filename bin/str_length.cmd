@@ -5,22 +5,22 @@ echo =============================================
 echo             Count string length.
 echo ---------------------------------------------
 echo  usage:
-echo    str.length [string]...
+echo    str_length [string]...
 echo  ex:
-echo    str.length string -^> 6
-echo    echo str^| str.length -^> 3
+echo    str_length string -^> 6
+echo    echo str^| str_length -^> 3
 echo  args:
 echo    1+: target strings
 echo;
 echo  caution1: argment is required.
-echo    str.length -^> FREEZE!! WAIT INPUT.
+echo    str_length -^> FREEZE!! WAIT INPUT.
 echo  caution2: white space is counted.
-echo    echo str   ^| str.length -^> 6
+echo    echo str   ^| str_length -^> 6
 echo =============================================
 exit /b 1
 :main
 call %~dp0path_include
-for /f "usebackq tokens=*" %%i in (`str.stream %*`) do call :calc "%%~i"
+for /f "usebackq tokens=*" %%i in (`str_stream %*`) do call :calc "%%~i"
 exit /b
 
 :calc

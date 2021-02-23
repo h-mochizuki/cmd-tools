@@ -5,16 +5,16 @@ echo =============================================
 echo  Echo your input parameters or input-stream.
 echo ---------------------------------------------
 echo  usage:
-echo    str.stream [string]...
+echo    str_stream [string]...
 echo  ex:
-echo    str.stream string -^> string
-echo    echo string ^| str.stream -^> string
+echo    str_stream string -^> string
+echo    echo string ^| str_stream -^> string
 echo  args:
 echo    1+: target strings
 echo;
 echo  caution:
 echo    argment is required.
-echo    ex) str.stream -^> FREEZE!! WAIT INPUT.
+echo    ex) str_stream -^> FREEZE!! WAIT INPUT.
 echo =============================================
 exit /b 1
 :main

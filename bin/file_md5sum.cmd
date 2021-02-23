@@ -18,6 +18,6 @@ echo =============================================
 exit /b 1
 :main
 call %~dp0path_include
-for /f "usebackq tokens=*" %%i in (`str.stream %*`) do (
+for /f "usebackq tokens=*" %%i in (`str_stream %*`) do (
     certutil -hashfile "%%~fi" MD5 | findstr /V /B "CertUtil: "
 )

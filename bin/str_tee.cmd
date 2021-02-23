@@ -5,9 +5,9 @@ echo =============================================
 echo   Input-stream to output-stream and file.
 echo ---------------------------------------------
 echo  usage:
-echo    str.tee [option] [log file]
+echo    str_tee [option] [log file]
 echo  ex:
-echo    echo abc ^| str.tee log.txt -^> abc
+echo    echo abc ^| str_tee log.txt -^> abc
 echo    type log.txt -^> abc
 echo  opts:
 echo    /a -a: append mode

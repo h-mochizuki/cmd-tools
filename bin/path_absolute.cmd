@@ -19,4 +19,4 @@ echo =============================================
 exit /b 1
 :main
 call %~dp0path_include
-for /f "usebackq tokens=*" %%i in (`str.stream %*`) do echo %%~fi
+for /f "usebackq tokens=*" %%i in (`str_stream %*`) do echo %%~fi
