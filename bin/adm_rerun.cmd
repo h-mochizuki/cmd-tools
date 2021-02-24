@@ -5,12 +5,14 @@ echo =============================================
 echo            Rerun as administrator.
 echo ---------------------------------------------
 echo  usage:
-echo    adm_rerun [caller] [arguments]...
+echo    adm_rerun [option] caller [arguments...]
 echo  ex:
 echo    adm_rerun "%~f0" %%*
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: caller file path
-echo    2: original arguments
+echo    caller   : caller file path
+echo    arguments: original arguments
 echo;
 echo  caution:
 echo    open another prompt,

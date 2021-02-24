@@ -4,13 +4,15 @@ echo =============================================
 echo        Load variables from env file.
 echo ---------------------------------------------
 echo  usage:
-echo    var_loadenv [env file]
+echo    var_loadenv [option] env-file
 echo  ex:
 echo    type some.txt -^> KEY=VALUE
 echo    var_loadenv some.txt
 echo    echo %%KEY%% ^-> VALUE
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: environment file path
+echo    env-file: environment file path
 echo =============================================
 exit /b 1
 :main

@@ -5,7 +5,9 @@ echo =============================================
 echo           Show netstat and process.
 echo ---------------------------------------------
 echo  usage:
-echo    net_process
+echo    net_process [option]
+echo  options:
+echo\   /?: show this usage.
 echo =============================================
 exit /b 1
 :main

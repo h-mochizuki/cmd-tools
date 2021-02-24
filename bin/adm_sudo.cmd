@@ -5,11 +5,13 @@ echo =============================================
 echo     Execute command as administrator role.
 echo ---------------------------------------------
 echo  usage:
-echo    adm_sudo [command]
+echo    adm_sudo [option] command
 echo  ex:
 echo    adm_sudo echo abc -^> abc
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: commands
+echo    command: command that want to run
 echo;
 echo  caution1:
 echo    command execute in another prompt,

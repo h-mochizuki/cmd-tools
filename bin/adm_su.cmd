@@ -5,7 +5,9 @@ echo =============================================
 echo          Switch administrator role.
 echo ---------------------------------------------
 echo  usage:
-echo    adm_su
+echo    adm_su [option]
+echo  options:
+echo\   /?: show this usage.
 echo;
 echo  caution:
 echo    open another prompt,

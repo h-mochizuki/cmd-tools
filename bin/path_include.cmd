@@ -4,11 +4,14 @@ echo =============================================
 echo          Append folder path to PATH.
 echo ---------------------------------------------
 echo  usage:
-echo    path_include [folder or file]
+echo    path_include [option] path
 echo  ex:
 echo    path_include "C:\path\to\folder"
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: folder or file path [set %%~dp0 if empty]
+echo    path: folder or file path
+echo          (set %%~dp0 if empty)
 echo =============================================
 exit /b 1
 :main

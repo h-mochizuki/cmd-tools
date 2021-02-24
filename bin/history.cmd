@@ -5,7 +5,9 @@ echo =============================================
 echo          Show this propmpt history.
 echo ---------------------------------------------
 echo  usage:
-echo    history
+echo    history [option]
+echo  options:
+echo\   /?: show this usage.
 echo =============================================
 exit /b 1
 :main

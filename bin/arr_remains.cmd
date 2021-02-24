@@ -5,11 +5,13 @@ echo =============================================
 echo   Return arguments without first argument.
 echo ---------------------------------------------
 echo  usage:
-echo    arr_remains [arguments]...
+echo    arr_remains [option] item[...]
 echo  ex:
 echo    arr_remains 1 2 "3 4" 5 -^> 2 "3 4" 5
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: arguments
+echo    item: array items
 echo =============================================
 exit /b 1
 :main

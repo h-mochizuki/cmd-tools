@@ -5,7 +5,9 @@ echo =============================================
 echo                 Show username.
 echo ---------------------------------------------
 echo  usage:
-echo    username
+echo    username [option]
+echo  options:
+echo\   /?: show this usage.
 echo =============================================
 exit /b 1
 :main

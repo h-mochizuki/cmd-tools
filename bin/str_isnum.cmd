@@ -5,12 +5,14 @@ echo =============================================
 echo              Check number only.
 echo ---------------------------------------------
 echo  usage:
-echo    str_isnum [string]...
+echo    str_isnum [option] string[...]
 echo  ex:
 echo    str_isnum -123.456
 echo    if not errorlevel 1 echo number!
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: target string
+echo    string: target string
 echo  return code:
 echo    0: number only.
 echo    1: contains not number charactor.

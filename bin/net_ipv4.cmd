@@ -5,12 +5,14 @@ echo =============================================
 echo              Show IPv4 Addresses.
 echo ---------------------------------------------
 echo  usage:
-echo    net_ipv4 [switch]
+echo    net_ipv4 [option] [name]
 echo  ex:
 echo    net_ipv4 Wi-Fi
 echo    # -^> xx.xx.xx.xx : Wireless LAN adapter Wi-Fi
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: switch name
+echo    name: switch name
 echo =============================================
 exit /b 1
 :main

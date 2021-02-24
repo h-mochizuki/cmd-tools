@@ -5,11 +5,16 @@ echo =============================================
 echo             Return current time.
 echo ---------------------------------------------
 echo  usage:
-echo    time_current [format]
+echo    time_current [option] [format]
 echo  ex:
 echo    time_current -^> 2021/02/21 06:54:34
 echo    time_current yyyyMMdd -^> 20210221
-echo  format: (default: yyyy/MM/dd HH:mm:ss)
+echo  options:
+echo\   /?: show this usage.
+echo  args:
+echo    format: datetime format
+echo            (default: yyyy/MM/dd HH:mm:ss)
+echo  format patterns:
 echo    yyyy        : four digits 'year'
 echo    yy          : last tow digits 'year'
 echo    MM, mo, m12 : 'month'

@@ -5,12 +5,14 @@ echo =============================================
 echo             Show confirm dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dlg_ask [message]
+echo    dlg_ask [option] message
 echo  ex:
 echo    dlg_ask "Are you sure?"
 echo    if errorlevel 1 echo No! -^> No!
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: message
+echo    message: question text
 echo  return code:
 echo    0: yes
 echo    1: no

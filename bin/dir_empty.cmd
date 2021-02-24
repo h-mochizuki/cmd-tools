@@ -5,14 +5,15 @@ echo =============================================
 echo           Check folder is empty.
 echo ---------------------------------------------
 echo  usage:
-echo    dir_empty [option] [folder]
+echo    dir_empty [option] folder
 echo  ex:
 echo    dir_empty %%CD%% ^>nul
 echo    if errorlevel 1 echo empty!
-echo  option:
+echo  options:
+echo\   /?: show this usage.
 echo    /r: find recursively
 echo  args:
-echo    1: folder path
+echo    folder: folder path
 echo  retrun code:
 echo    0: empty
 echo       or has empty folder if use /r option.

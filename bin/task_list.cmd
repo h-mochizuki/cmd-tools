@@ -9,10 +9,11 @@ echo    task_list [option]
 echo  ex:
 echo    task_list /nh /p 0
 echo    # -^> System Idle Process              0 N/A
-echo  opts:
-echo    /p  : pid
-echo    /n  : image name
-echo    /nh : no header
+echo  options:
+echo\   /?       : show this usage.
+echo    /p [pid] : match pid
+echo    /n [name]: image-name contains
+echo    /nh      : no header
 echo =============================================
 exit /b 1
 :main

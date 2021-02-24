@@ -5,7 +5,7 @@ echo =============================================
 echo          Return match item index.
 echo ---------------------------------------------
 echo  usage:
-echo    arr_indexof [target] [array]...
+echo    arr_indexof [option] target [item...]
 echo  ex:
 echo    arr_indexof -^> 0
 echo    arr_indexof a -^> 0
@@ -13,9 +13,11 @@ echo    arr_indexof a b c -^> 0
 echo    arr_indexof a a b c -^> 1
 echo    arr_indexof c a b c -^> 3
 echo    arr_indexof a a a a -^> 1
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: target item
-echo    2+: array
+echo    target: target item
+echo    item  : array items
 echo =============================================
 exit /b 1
 :main

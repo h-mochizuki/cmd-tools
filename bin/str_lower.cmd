@@ -5,11 +5,13 @@ echo =============================================
 echo            Convert to lowercase.
 echo ---------------------------------------------
 echo  usage:
-echo    str_lower [string]
+echo    str_lower [option] string[...]
 echo  ex:
 echo    str_lower STRING -^> string
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: target string
+echo    string: target string
 echo;
 echo  caution:
 echo    argment is required.

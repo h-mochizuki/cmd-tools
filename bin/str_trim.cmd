@@ -5,11 +5,13 @@ echo =============================================
 echo             Trim last whitespace.
 echo ---------------------------------------------
 echo  usage:
-echo    str_trim [string]
+echo    str_trim [option] string
 echo  ex:
 echo    echo string ^| str_trim -^> string
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: target string
+echo    string: target string
 echo;
 echo  caution:
 echo    argment is required.

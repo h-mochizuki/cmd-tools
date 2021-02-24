@@ -5,7 +5,9 @@ echo =============================================
 echo                 Show hosts.
 echo ---------------------------------------------
 echo  usage:
-echo    hosts
+echo    hosts [option]
+echo  options:
+echo\   /?: show this usage.
 echo =============================================
 exit /b 1
 :main

@@ -5,12 +5,14 @@ echo =============================================
 echo  Echo your input parameters or input-stream.
 echo ---------------------------------------------
 echo  usage:
-echo    str_stream [string]...
+echo    str_stream [option] string[...]
 echo  ex:
 echo    str_stream string -^> string
 echo    echo string ^| str_stream -^> string
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: target strings
+echo    string: target string
 echo;
 echo  caution:
 echo    argment is required.

@@ -4,13 +4,15 @@ echo =============================================
 echo         Set result value to variable.
 echo ---------------------------------------------
 echo  usage:
-echo    var_setf [name] [command]
+echo    var_setf [option] name command
 echo  ex:
 echo    var_setf tempfile file_tmp
 echo    echo %%tempfile%% -^> %%temp%%\bat~123.tmp
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: variable name [require]
-echo    2: commands
+echo    name: variable name [require]
+echo    command: command that want to evaluate
 echo;
 echo  caution:
 echo    last value is set if multiple results.

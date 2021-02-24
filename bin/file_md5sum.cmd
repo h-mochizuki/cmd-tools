@@ -5,11 +5,13 @@ echo =============================================
 echo             Show md5sum hash.
 echo ---------------------------------------------
 echo  usage:
-echo    file_md5sum [file]...
+echo    file_md5sum [option] file[...]
 echo  ex:
 echo    file_md5sum file -^> 2786...
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: file path
+echo    file: file path
 echo;
 echo  caution:
 echo    argment is required.

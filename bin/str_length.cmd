@@ -5,12 +5,14 @@ echo =============================================
 echo             Count string length.
 echo ---------------------------------------------
 echo  usage:
-echo    str_length [string]...
+echo    str_length [option] string[...]
 echo  ex:
 echo    str_length string -^> 6
 echo    echo str^| str_length -^> 3
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: target strings
+echo    target: target string
 echo;
 echo  caution1: argment is required.
 echo    str_length -^> FREEZE!! WAIT INPUT.

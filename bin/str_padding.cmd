@@ -5,14 +5,18 @@ echo =============================================
 echo           Pad string with padding.
 echo ---------------------------------------------
 echo  usage:
-echo    str_padding [string] [size] [charactor]
+echo    str_padding [option] string size char
 echo  ex:
 echo    str_padding abcd 10 * -^> abcd******
 echo    str_padding 1234 -10 0 -^> 0000001234
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: input-string
-echo    2: padding size[right justified if minus]
-echo    3: padding charactor[default: whitespace]
+echo    string: taret string
+echo    size  : padding size
+echo            (right justified if minus)
+echo    char  : padding charactor
+echo            (default: whitespace)
 echo =============================================
 exit /b 1
 :main

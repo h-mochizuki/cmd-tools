@@ -5,12 +5,14 @@ echo =============================================
 echo               Reverse string
 echo ---------------------------------------------
 echo  usage:
-echo    str_reverse [string]...
+echo    str_reverse [option] string[...]
 echo  ex:
 echo    str_reverse abcd -^> dcba
 echo    echo biz^| str_reverse -^> zib
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: target strings
+echo    string: target string
 echo;
 echo  caution:
 cho     argment is required.

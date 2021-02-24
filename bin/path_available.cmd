@@ -5,12 +5,14 @@ echo =============================================
 echo          Check command is available.
 echo ---------------------------------------------
 echo  usage:
-echo    path_available [command]
+echo    path_available [option] command
 echo  ex:
 echo    path_available java
 echo    if errorlevel 1 echo unavailable -^> unavailable
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: command
+echo    command: command that want to use
 echo  return code:
 echo    0: available
 echo    1: unavailable

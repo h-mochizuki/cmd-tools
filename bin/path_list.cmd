@@ -5,7 +5,9 @@ echo =============================================
 echo           Show separated PATH list.
 echo ---------------------------------------------
 echo  usage:
-echo    path_list
+echo    path_list [option]
+echo  options:
+echo\   /?: show this usage.
 echo =============================================
 exit /b 1
 :main

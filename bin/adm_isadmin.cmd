@@ -5,10 +5,12 @@ echo =============================================
 echo          Check you are administrator.
 echo ---------------------------------------------
 echo  usage:
-echo    adm_isadmin
+echo    adm_isadmin [option]
 echo  ex:
 echo    adm_isadmin
 echo    if not errorlevel 1 echo I'm admin -^> I'm admin
+echo  options:
+echo\   /?: show this usage.
 echo  return code:
 echo    0: administrator
 echo    1: not administrator

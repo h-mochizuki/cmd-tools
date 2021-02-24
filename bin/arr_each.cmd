@@ -5,11 +5,14 @@ echo =============================================
 echo       Execute command each input-stream.
 echo ---------------------------------------------
 echo  usage:
-echo    arr_each [command]
+echo    arr_each [option] command
 echo  ex:
 echo    echo a^| arr_each echo {}{} -^> aa
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: command [{} replaced stream item]
+echo    command: command that want to run
+echo             ({} replace streamed item)
 echo;
 echo  caution1:
 echo    input-stream required.

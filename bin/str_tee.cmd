@@ -5,14 +5,16 @@ echo =============================================
 echo   Input-stream to output-stream and file.
 echo ---------------------------------------------
 echo  usage:
-echo    str_tee [option] [log file]
+echo    str_tee [option] [file]
 echo  ex:
 echo    echo abc ^| str_tee log.txt -^> abc
 echo    type log.txt -^> abc
-echo  opts:
+echo  options:
+echo\   /?: show this usage.
 echo    /a -a: append mode
 echo  args:
-echo    1: log-file path[option]
+echo    file: log-file path
+echo          (create log_yyyyMMddHHmmss.txt if empty)
 echo =============================================
 exit /b 1
 :main

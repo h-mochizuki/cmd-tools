@@ -5,11 +5,13 @@ echo =============================================
 echo             Show message dialog.
 echo ---------------------------------------------
 echo  usage:
-echo    dlg_msg [message]
+echo    dlg_msg [option] message
 echo  ex:
 echo    dlg_msg "Good morning!!"
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: message
+echo    message: send message
 echo; 
 echo  caution:
 echo    argment is required.

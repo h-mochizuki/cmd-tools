@@ -5,11 +5,13 @@ echo =============================================
 echo                Wait seconds.
 echo ---------------------------------------------
 echo  usage:
-echo    time_waitsec [seconds]
+echo    time_waitsec [option] [seconds]
 echo  ex:
 echo    time_waitsec 10
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: seconds
+echo    seconds: wait seconds
 echo =============================================
 exit /b 1
 :main

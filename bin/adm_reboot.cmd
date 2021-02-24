@@ -5,7 +5,9 @@ echo =============================================
 echo               Reboot machine.
 echo ---------------------------------------------
 echo  usage:
-echo    adm_reboot
+echo    adm_reboot [option]
+echo  options:
+echo\   /?: show this usage.
 echo =============================================
 exit /b 1
 :main

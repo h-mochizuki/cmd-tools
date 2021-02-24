@@ -5,11 +5,14 @@ echo =============================================
 echo         Show service list or detail.
 echo ---------------------------------------------
 echo  usage:
-echo    srv_list [service name]...
+echo    srv_list [option] name[...]
 echo  ex:
 echo    srv_list MySQL -^> SERVICE_NAM...
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: service name [show list when empty]
+echo    name: service names
+echo          (show list when empty)
 echo =============================================
 exit /b 1
 :main

@@ -5,12 +5,14 @@ echo =============================================
 echo          Return array item count.
 echo ---------------------------------------------
 echo  usage:
-echo    arr_count [arguments]...
+echo    arr_count [option] item[...]
 echo  ex:
 echo    arr_count 1 2 3 -^> 3
 echo    arr_count -^> 0
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: arguments
+echo    item: array items
 echo =============================================
 exit /b 1
 :main

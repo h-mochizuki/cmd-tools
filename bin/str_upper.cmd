@@ -5,11 +5,13 @@ echo =============================================
 echo            Convert to uppercase.
 echo ---------------------------------------------
 echo  usage:
-echo    str_upper [string]
+echo    str_upper [option] string[...]
 echo  ex:
 echo    str_upper string -^> STRING
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1: target string
+echo    string: target string
 echo;
 echo  caution:
 echo    argment is required.

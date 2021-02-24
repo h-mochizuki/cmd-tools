@@ -5,13 +5,15 @@ echo =============================================
 echo            Kill service process.
 echo ---------------------------------------------
 echo  usage:
-echo    srv_kill [service name]...
+echo    srv_kill [option] name[...]
 echo  ex:
 echo    srv_kill a_service
 echo    # abort a_service(pid:123)? [y/N]^> y
 echo    # -^> a_service was abort.
+echo  options:
+echo\   /?: show this usage.
 echo  args:
-echo    1+: service name
+echo    name: service names
 echo =============================================
 exit /b 1
 :main
