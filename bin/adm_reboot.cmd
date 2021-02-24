@@ -10,6 +10,9 @@ echo =============================================
 exit /b 1
 :main
 call %~dp0path_include
-call yn "Reboot?"
+call yn "Do you want to reboot your PC?"
 if errorlevel 1 exit /b 1
+echo Reboot your PC.
+echo Please wait a moment.
+call time_waitsec 3 >nul
 shutdown /r /t 0
