@@ -101,10 +101,10 @@ if "x%~1"=="x%opt%" (
     if not exist option.env (
         call :print "set _opt_name_=%1">> option.env
         if "x%hasval%"=="x" (
-            call :print "set _opt_shift_=shift /%cnt%">> option.env
+            echo set _opt_shift_=shift /%cnt% >> option.env
         ) else (
             call :print "set _opt_value_=%2">> option.env
-            call :print "set _opt_shift_=shift /%cnt% & shift /%cnt%">> option.env
+            echo set _opt_shift_=shift /%cnt% ^& shift /%cnt% >> option.env
             shift
         )
     ) else (
