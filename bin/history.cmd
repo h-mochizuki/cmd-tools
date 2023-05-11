@@ -12,4 +12,4 @@ echo =============================================
 exit /b 1
 :main
 doskey /history
-exit 0
+exit /b 0
